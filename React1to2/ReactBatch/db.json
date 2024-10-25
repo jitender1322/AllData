@@ -1,0 +1,19 @@
+{
+  "posts": [
+    {
+      "title": "Updated title",
+      "views": "Updated views",
+      "id": "88eb"
+    },
+    {
+      "title": "Updated title",
+      "views": "Updated views",
+      "id": "3c69"
+    },
+    {
+      "title": "Updated title",
+      "views": "Updated views",
+      "id": "57db"
+    }
+  ]
+}
