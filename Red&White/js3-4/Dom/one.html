@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="name">
+    <button id="btn">add</button>
+    <ul id="list"></ul>
+    <script>
+
+        // let element = document.createElement("h1");
+        // // element.innerText = "this is heading";
+
+        // let text = document.createTextNode("this is a heading");
+
+        // element.appendChild(text);
+
+        // document.body.append(element)
+
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", () => {
+            let newElement = document.createElement("li")
+            newElement.innerText = document.getElementById("name").value
+
+            document.getElementById("list").append(newElement);
+
+            document.getElementById("name").value = "";
+        })
+
+        console.log(btn.getAttribute("id"));
+
+        btn.setAttribute("class", "btnClass")
+        console.log(btn.getAttribute("class"));
+
+
+    </script>
+
+</body>
+
+</html>
