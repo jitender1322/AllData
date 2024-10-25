@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="width: 50%;margin: 10px auto;text-align: center;">
+        <h1>PassWord Checker</h1>
+        <input id="password" type="text"><br>
+        <span id="feedback"></span>
+    </div>
+    <script>
+        document.getElementById('password').addEventListener('input', function () {
+            const password = this.value;
+            const feedback = document.getElementById('feedback');
+            feedback.innerHTML = checkPassword(password);
+        });
+
+
+        function checkPassword(password) {
+            const minLength = 8;
+            const hasUpperCase = /[A-Z]/.test(password);
+            const hasLowerCase = /[a-z]/.test(password);
+            const hasNumbers = /[0-9]/.test(password);
+            const hasSpecialChars = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+            let strength = 0;
+            if (password.length >= minLength) strength++;
+            if (hasUpperCase) strength++;
+            if (hasLowerCase) strength++;
+            if (hasNumbers) strength++;
+            if (hasSpecialChars) strength++;
+
+            switch (strength) {
+                case 0:
+                case 1:
+                case 2:
+                    return "Password is very weak";
+                case 3:
+                    return "Password is weak";
+                case 4:
+                    return "Password is good";
+                case 5:
+                    return "Password is strong";
+            }
+        }
+    </script>
+</body>
+
+</html>

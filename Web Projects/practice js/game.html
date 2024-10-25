@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        #box-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #box {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: yellow;
+            border: 2px solid black;
+            display: inline-block;
+        }
+
+        .one {
+            position: absolute;
+            top: 20%;
+            left: 25%;
+            display: inline-block;
+            background-color: black;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+        }
+
+        .two {
+            position: absolute;
+            top: 20%;
+            right: 25%;
+            display: inline-block;
+            background-color: black;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+        }
+
+        .three {
+            position: absolute;
+            top: 60%;
+            right: 25%;
+            display: inline-block;
+            background-color: black;
+            height: 5px;
+            width: 50px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box-wrapper">
+        <div id="box">
+            <span class="one"></span>
+            <span class="two"></span>
+            <span class="three"></span>
+        </div>
+    </div>
+    <script>
+        let box = document.getElementById("box-wrapper");
+        let left = 0;
+        let up = 0;
+        document.addEventListener("keydown", (e) => {
+            console.log(e.key);
+            if (e.key == "ArrowRight") {
+                box.style.left = `${left}px`;
+                left += 10;
+            }
+            else if (e.key == "ArrowLeft") {
+                box.style.left = `${left}px`;
+                left -= 10;
+            }
+            else if (e.key == "ArrowUp") {
+                box.style.top = `${up}px`;
+                up -= 10;
+            }
+            else if (e.key == "ArrowDown") {
+                box.style.top = `${up}px`;
+                up += 10;
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+Q.1 What is React Js?
+
+Ans. React is a JavaScript library. Which provide rich user interface using component. It is maintained by
+     meta(Facebook).
+
+Q.2 What is NPM in React Js? 
+
+Ans. NPM => Node Package Manager. It is used to download javascript packages from node package manager.
+
+Q.3 What is Role of Node Js in react Js? 
+
+Ans. React Js use to build rich user interfaces whereas Node Js handle server side. Using both together
+     give power to developer for creating full stack websites.
+
+Q.4 What is CLI command In React Js? 
+
+Ans. CLI => Command Line Interface. It is commonly used to "create-react-app". It is a tool to quickly 
+     create a react project.
+
+Q.5 What is Components in React Js? 
+
+Ans. Components are the building blocks of userface in React. They are reusable piece of code that define
+     how a part of UI should appear and behave.
+
+Q.6 What is Header and Content Components in React Js? 
+
+Ans. Header and Content are two diffrent component where Header contain business logo, navbar and any other 
+     element which appear on the top of the page and Content contain main content of the website like 
+     dyanamic content.
+
+Q.7 How to install React Js on Windows, Linux Operating System? How to Install NPM and How to check 
+    version of NPM? 
+
+Ans. React.js applications are built using Node.js, so we need to have Node.js installed on our system.
+     After that you can use the create-react-app command to set up a new React.js project. Open your terminal 
+     or command prompt and run "create-react-app".
+
+     When we install Node JS, NPM comes with it and downloaded in our system. For checking npm version we can
+     use command 'napm -v'.
+
+Q.8 How to check version of React Js? 
+
+Ans. For checking react version we can log in a function component this "consol.log(React.version)".
+
+Q.9 How to change in components of React Js? 
+
+Ans. First we have to select a component which we want to change and then and we do modification according
+     to us like adding jsx, using useState, adding content and so on.
+
+Q.10 How to Create a List View in React Js? 
+
+Ans.    const subject = ["c++", "java", "python"];
+        return (
+                  <div>
+                      {subject.map((e, i) => {
+                       return <MyFunctionComponent2 key={i} />;
+                      })}
+                 </div>
+               );
+
+Q.11 Create Increment decrement state change by button click? 
+
+Ans. const [count, setCount] = useState(0);
+     return (
+     <div>
+      <h1>{count}</h1>
+      <button onClick={()=>setCount(count + 1)}>Add</button>
+      <button onClick={()=>setCount(count - 1)}>Subtract</button>
+     </div>
+    );

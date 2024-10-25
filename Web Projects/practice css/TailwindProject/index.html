@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <nav class="px-5 py-2 flex justify-between items-center bg-white shadow-md">
+        <a href="#" class="flex items-center">
+            <img src="./img/logo.png" class="max-w-14" alt="">
+            <span class="m-2 font-bold font-display">Fly Your Dream</span>
+        </a>
+        <div id="namMenu" class="hidden lg:flex gap-12">
+            <a href="#" class="font-medium hover:text-primary">Pricing</a>
+            <a href="#" class="font-medium hover:text-primary">Docs</a>
+            <a href="#" class="font-medium hover:text-primary">Changelog</a>
+            <a href="#" class="font-medium hover:text-primary">Blogs</a>
+            <a href="#" class="font-medium hover:text-primary">Login</a>
+        </div>
+        <button class="hidden md:block border border-yellow-300 rounded-md p-2 hover:border-primary">
+            <i class="fa-solid fa-feather-pointed"></i>
+            <span>Electron Developer</span>
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <button class="md:hidden" onclick="handleClick()">
+            <i class="fa-solid fa-bars text-yellow-300 text-2xl"></i>
+        </button>
+
+        <div id="navDialog" class="hidden fixed z-10 inset-0 bg-white md:hidden">
+            <div id="navbar" class="flex justify-between items-center px-5 py-2">
+                <a href="#" class="flex items-center">
+                    <img src="./img/logo.png" class="max-w-14" alt="">
+                    <span class="m-2 font-bold font-display">Fly Your Dream</span>
+                </a>
+                <button class="lg:hidden" onclick="handleClick()">
+                    <i class="fa-solid fa-xmark text-yellow-300 text-2xl"></i>
+                </button>
+            </div>
+            <div class="mt-5 flex flex-col">
+                <a href="#" class="font-medium m-2 p-2 hover:bg-green-100 rounded-md">Pricing</a>
+                <a href="#" class="font-medium m-2 p-2 hover:bg-green-100 rounded-md">Docs</a>
+                <a href="#" class="font-medium m-2 p-2 hover:bg-green-100 rounded-md">Changelog</a>
+                <a href="#" class="font-medium m-2 p-2 hover:bg-green-100 rounded-md">Blogs</a>
+                <a href="#" class="font-medium m-2 p-2 hover:bg-green-100 rounded-md">Login</a>
+            </div>
+            <div class="h-[1px] my-2 bg-green-100"></div>
+            <button class=" md:block border border-yellow-300 rounded-md m-2 p-2 hover:border-primary">
+                <i class="fa-solid fa-feather-pointed"></i>
+                <span>Electron Developer</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </nav>
+    <main>
+        <div id="hero" class="min-h-screen bg-gradient-to-br from-purple-100 via-yellow-100 to-transparent pt-8">
+            <div id="hero-container" class="max-w-4xl mx-auto px-6  flex flex-col items-center">
+                <div id="version" class="flex items-center gap-3 border border-yellow-300 bg-yellow-50 w-fit rounded-lg
+                     px-3 py-1 shadow-md hover:shadow-lg hover:-translate-y-1 transition cursor-pointer group mt-10">
+                    <div class="w-2 h-2 rounded-full bg-yellow-600 border"></div>
+                    <p class="font-medium font-display text-yellow-600">v0.21.1: <span
+                            class="text-yellow-800">Find-in-page bug
+                            fixes</span></p>
+                    <i class="fa-solid fa-arrow-right text-yellow-600 group-hover:translate-x-1 transition"></i>
+                </div>
+                <h1 class="font-display text-5xl mt-7 mb-4 font-medium text-yellow-800">Welcome to our website</h1>
+                <p class="leading-snug  text-yellow-600 text-center">Lorem ipsum dolor sit amet,
+                    consectetur
+                    adipisicing
+                    elit.
+                    Accusantium, aliquam,
+                    distinctio magnam
+                    harum corporis optio omnis tempora dolorum voluptatem totam quis! Illo sit non officiis beatae
+                    voluptatum magnam eius cumque?</p>
+                <div id="btn-container" class="mt-5 flex gap-3">
+                    <button class="border py-1 px-3 border-green-400 rounded-sm text-green-900 font-medium 
+                        cursor-pointer hover:shadow-md transition">Contact Us</button>
+                    <button class="border py-1 px-3 border-green-400 rounded-sm text-green-900 font-medium 
+                        cursor-pointer hover:shadow-md transition">Read Blog</button>
+                </div>
+            </div>
+
+            <div id="slide" class="mt-5 p-3 overflow-hidden">
+                <div id="line-1" class="flex -translate-x-36">
+                    <div>
+                        <img src="./img/lion.png" class="max-w-52 mx-3" alt="">
+                    </div>
+                    <div>
+                        <img src="./img/lion.png" class="max-w-52 mx-3" alt="">
+                    </div>
+                    <div>
+                        <img src="./img/lion.png" class="max-w-52 mx-3" alt="">
+                    </div>
+                    <div>
+                        <img src="./img/lion.png" class="max-w-52 mx-3" alt="">
+                    </div>
+                    <div>
+                        <img src="./img/lion.png" class="max-w-52 mx-3" alt="">
+                    </div>
+                    <div>
+                        <img src="./img/lion.png" class="max-w-52 mx-3" alt="">
+                    </div>
+                    <div>
+                        <img src="./img/lion.png" class="max-w-52 mx-3" alt="">
+                    </div>
+                    <div>
+                        <img src="./img/lion.png" class="max-w-52 mx-3" alt="">
+                    </div>
+                </div>
+                <div id="line-2" class="flex translate-x-12">
+                    <div>
+                        <img src="./img/lion.png" class="max-w-52 mx-3 -scale-x-100" alt="">
+                    </div>
+                    <div>
+                        <img src="./img/lion.png" class="max-w-52 mx-3 -scale-x-100" alt="">
+                    </div>
+                    <div>
+                        <img src="./img/lion.png" class="max-w-52 mx-3 -scale-x-100" alt="">
+                    </div>
+                    <div>
+                        <img src="./img/lion.png" class="max-w-52 mx-3 -scale-x-100" alt="">
+                    </div>
+                    <div>
+                        <img src="./img/lion.png" class="max-w-52 mx-3 -scale-x-100" alt="">
+                    </div>
+                    <div>
+                        <img src="./img/lion.png" class="max-w-52 mx-3 -scale-x-100" alt="">
+                    </div>
+                    <div>
+                        <img src="./img/lion.png" class="max-w-52 mx-3 -scale-x-100" alt="">
+                    </div>
+                    <div>
+                        <img src="./img/lion.png" class="max-w-52 mx-3 -scale-x-100" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div id="content" class="mt-4  text-center p-4">
+                <h2 class="text-gray-700 text-5xl font-medium font-display my-3">The Lion King</h2>
+                <p class="text-green-500">Lorem ipsum dolor, sit amet consectetur adipisicing elit. A eveniet quod,
+                    magni
+                    provident voluptatum
+                    nemo? Nulla natus vitae doloribus. Quam dolore natus harum commodi! Ducimus odit placeat nemo
+                    assumenda commodi.</p>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="./script.js"></script>
+
+</html>

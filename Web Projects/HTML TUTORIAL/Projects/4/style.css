@@ -1,0 +1,86 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    height: 100%;
+    text-transform: capitalize;
+}
+
+.img1 {
+    background-image: url(/Projects/4/img/img.jpg);
+    height: 40em;
+    position: relative;
+}
+
+.textbg {
+    position: absolute;
+    top: 42%;
+    width: fit-content;
+    left: 35%;
+    background-color: rgb(116, 134, 134);
+    padding: 12px 15px;
+}
+
+.text {
+    font-size: 2rem;
+    color: white;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+}
+
+.textarea {
+    padding: 40px 50px;
+    text-align: center;
+    font-size: 1rem;
+    color: rgb(15, 43, 34);
+    line-height: 30px;
+    background-color: cadetblue;
+}
+
+.img2 {
+    background-image: url(/Projects/4/img/img2.jpg);
+    height: 30em;
+    position: relative;
+}
+
+.text2 {
+    font-size: 2rem;
+    color: white;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.textbg2 {
+    position: absolute;
+    top: 45%;
+    width: fit-content;
+    left: 35%;
+    background-color: rgb(116, 134, 134);
+    padding: 12px 15px;
+}
+
+.text3 {
+    font-size: 2rem;
+    color: white;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.textbg3 {
+    position: absolute;
+    top: 42%;
+    width: fit-content;
+    left: 35%;
+    background-color: rgb(116, 134, 134);
+    padding: 12px 15px;
+}
+
+.img1,
+.img2,
+.img3 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}

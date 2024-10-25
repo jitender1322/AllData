@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c2c2c;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .task-table {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #444;
+        }
+
+        tr:nth-child(even) {
+            background-color: #3a3a3a;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #383838;
+        }
+
+        button {
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #5cb85c;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button.edit {
+            background-color: #5bc0de;
+        }
+
+        button.delete {
+            background-color: #d9534f;
+        }
+
+        button:disabled {
+            background-color: #888;
+            cursor: not-allowed;
+        }
+
+        button:hover:not(:disabled) {
+            background-color: #4cae4c;
+        }
+
+        button.edit:hover:not(:disabled) {
+            background-color: #31b0d5;
+        }
+
+        button.delete:hover:not(:disabled) {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="task-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Task</th>
+                    <th>Description</th>
+                    <th>Priority</th>
+                    <th colspan="2">Action</th>
+                    <th>Mark as Completed</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Task 1</td>
+                    <td>Complete the report</td>
+                    <td>High</td>
+                    <td><button>Edit</button></td>
+                    <td><button>Delete</button></td>
+                    <td><button onclick="markAsCompleted(this)">Mark as Completed</button></td>
+                    <td>Pending</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Task 2</td>
+                    <td>Prepare presentation</td>
+                    <td>Medium</td>
+                    <td><button>Edit</button></td>
+                    <td><button>Delete</button></td>
+                    <td><button onclick="markAsCompleted(this)">Mark as Completed</button></td>
+                    <td>Pending</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Task 3</td>
+                    <td>Update website</td>
+                    <td>Low</td>
+                    <td><button>Edit</button></td>
+                    <td><button>Delete</button></td>
+                    <td><button onclick="markAsCompleted(i)">Mark as Completed</button></td>
+                    <td>Pending</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function markAsCompleted(button) {
+            const row = button.parentNode.parentNode;
+            const statusCell = row.cells[row.cells.length - 1];
+            statusCell.textContent = 'Completed';
+            button.disabled = true;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debounce Search Example</title>
+</head>
+
+<body>
+    <h1>Debounce Search Example</h1>
+    <input type="text" id="searchInput" placeholder="Type to search...">
+    <div id="results"></div>
+
+    <script>
+        function debounce(func, wait) {
+            let timeout;
+            return function (...args) {
+                // clearTimeout(timeout);
+                timeout = setTimeout(() => {
+                    func(this, args);
+                }, wait);
+            };
+        }
+
+        // Example function to simulate a search operation
+        function performSearch(query) {
+            document.getElementById('results').innerText = `Searching for: ${query}`;
+            // Simulate an API call with a delay
+            setTimeout(() => {
+                document.getElementById('results').innerText = `Results for: ${query}`;
+            }, 500);
+        }
+
+        // Get the input element
+        const searchInput = document.getElementById('searchInput');
+
+        // Wrap the performSearch function with debounce
+        const debouncedSearch = debounce(function () {
+            performSearch(searchInput.value);
+        }, 300); // 300ms delay
+
+        // Attach the debounced function to the input event
+        searchInput.addEventListener('input', debouncedSearch);
+    </script>
+</body>
+
+</html>

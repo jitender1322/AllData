@@ -1,0 +1,71 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-image: url(/p6/bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.modal1 {
+  width: 50vw;
+  height: 250px;
+  font-size: 2rem;
+  background-color: aliceblue;
+  text-align: center;
+  border-radius: 12px;
+}
+.modal1 button {
+  border: none;
+  background-color: rgb(3, 190, 247);
+  padding: 12px 24px;
+  color: white;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  letter-spacing: 3px;
+}
+.modal1 button:hover {
+  background-color: white;
+  border: 2px solid rgb(3, 190, 247);
+  color: rgb(3, 190, 247);
+}
+.zero {
+  visibility: hidden;
+}
+.modal2 {
+  width: 60vw;
+  height: 150px;
+  font-size: 1rem;
+  background-color: white;
+  border-radius: 12px;
+  position: absolute;
+  text-align: center;
+  top: 35vh;
+  left: 20vw;
+  letter-spacing: 2px;
+}
+.modal2 h1 {
+  margin: 10px 0px;
+  font-size: 2.3rem;
+}
+.modal2 button {
+  color: red;
+  position: absolute;
+  font-size: 1.5rem;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.modal2 button:hover {
+  transform: scale(1.4);
+  color: rgb(218, 106, 106);
+}

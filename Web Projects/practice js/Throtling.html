@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Follower with Throttling</title>
+    <style>
+        #follower {
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        #container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="follower"></div>
+        <span></span>
+    </div>
+
+    <script>
+
+        window.addEventListener("mousemove", handleMouseover())
+
+        function handleMouseover(event) {
+            document.getElementById('follower').style.left = event.clientX;
+            document.getElementById('follower').style.top = event.clientY;
+
+            document.querySelector("span").innerText = event.clientX
+        }
+    </script>
+</body>
+
+</html>

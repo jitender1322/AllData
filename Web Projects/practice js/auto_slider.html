@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: rgba(210, 180, 140, 0.397);
+        overflow-y: hidden;
+      }
+      .slider {
+        position: relative;
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        height: 95vh;
+        max-width: 850px;
+        margin: 20px auto;
+        border: 2px groove black;
+        border-radius: 20px;
+        box-shadow: 0 0 20px gray;
+      }
+      .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+      .slide {
+        width: 100%;
+        border-radius: 20px;
+      }
+      img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+      <div class="slides">
+        <img src="https://i.pinimg.com/564x/ea/9b/f9/ea9bf94bfe8abb116573787e41e318c5.jpg" alt="" class="slide" />
+        <img src="https://i.pinimg.com/564x/79/3f/c8/793fc81ea9bc309ce267bee2d592f26f.jpg" alt="" class="slide" />
+        <img src="https://i.pinimg.com/564x/46/5f/b2/465fb29d49922c847c1978ed323afb27.jpg" alt="" class="slide" />
+        <!-- <img src="../../Images/background.jpg" alt="" class="slide" /> -->
+      </div>
+    </div>
+
+    <div class="navigation">
+      <button class="prev"><</button>
+      <button class="next">></button>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let slides = document.querySelector(".slides");
+        let sliderImage = document.querySelectorAll(".slide");
+        let prevButton = document.querySelector(".prev");
+        let nextButton = document.querySelector(".next");
+
+        let currentIndex = 0;
+
+        function showSlide() {
+          currentIndex++;
+          if (currentIndex >= sliderImage.length) {
+            currentIndex = 0;
+          }
+          slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        setInterval(() => {
+          showSlide();
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>

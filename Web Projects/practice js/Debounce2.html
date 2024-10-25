@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inp">
+    <h4 id="result"></h4>
+    <script>
+        let inp = document.getElementById("inp");
+
+        function debounce() {
+            return function () {
+                setTimeout(() => {
+                    perform();
+                }, 1000);
+            };
+        }
+        function perform() {
+            document.getElementById('result').innerText = `you typed :  ${inp.value}`;
+        }
+        inp.addEventListener("input", debounce())
+
+
+    </script>
+</body>
+
+</html>

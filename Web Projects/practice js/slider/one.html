@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .slider {
+            width: 70%;
+            height: 80vh;
+            margin: 50px auto;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .slides {
+            width: 100%;
+            display: flex;
+            transition: transform 0.3s ease-in;
+        }
+
+        .navigation {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            padding: 0 100px;
+            position: absolute;
+            top: 50%;
+        }
+
+        .navigation button {
+            cursor: pointer;
+            border-radius: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slider">
+        <div class="slides">
+            <img src="./img/img-1.jpg" alt="" class="slide">
+            <img src="./img/img-2.jpg" alt="" class="slide">
+            <img src="./img/img-3.jpg" alt="" class="slide">
+        </div>
+    </div>
+    <div class="navigation">
+        <button class="prev"><i class="fa-solid fa-less-than"></i></button>
+        <button class="next"><i class="fa-solid fa-greater-than"></i></button>
+    </div>
+    <script>
+        let slider = document.querySelector(".slider");
+        let slides = document.querySelector(".slides");
+        let slideImg = document.querySelectorAll(".slide");
+        let prevBtn = document.querySelector(".prev");
+        let nextBtn = document.querySelector(".next");
+
+        let currentIndex = 0;
+
+        function changeSlide(index) {
+            slides.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        prevBtn.addEventListener("click", function () {
+            // currentIndex = currentIndex > 0 ? currentIndex - 1 : slideImg.length - 1;
+            currentIndex = currentIndex > 0 ? currentIndex - 1 : 2
+            changeSlide(currentIndex);
+        });
+
+        nextBtn.addEventListener("click", function () {
+            // currentIndex = currentIndex < slideImg.length - 1 ? currentIndex + 1 : 0;
+            changeSlide(currentIndex);
+        })
+    </script>
+</body>
+
+</html>
