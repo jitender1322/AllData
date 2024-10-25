@@ -1,0 +1,204 @@
+/* default */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+img {
+    width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* first navbar */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+
+nav {
+    background-color: #38454a;
+    justify-content: center;
+    height: 76px;
+}
+
+.logo {
+    width: 23%;
+}
+
+.user {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.nav-1 {
+    margin-right: 50px;
+}
+
+.nav-2 {
+    margin-left: 50px;
+}
+
+.nav-2 ul li a {
+    color: #9ea9ad;
+    font-size: 18px;
+    margin: 0 18px;
+}
+
+.nav-2 ul li:nth-child(1) a img {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.inp {
+    color: #9ea9ad;
+    background-color: rgb(255 255 255 / 5%);
+    padding: 10px;
+    margin: 0 40px;
+    border-radius: 3px;
+}
+
+.inp i {
+    font-size: 13px;
+    margin: 0 10px;
+}
+
+.inp input {
+    color: white;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.inp input::placeholder {
+    color: #9ea9ad;
+}
+
+.user-info {
+    background-color: #455358;
+    height: 76px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.name {
+    margin: 0 10px;
+}
+
+.name h4 {
+    font-size: 13px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.name span {
+    font-weight: 300;
+    font-size: 12px;
+    color: #9ea9ad;
+}
+
+
+/* second navbar */
+.nav_second {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.nav_second ul {
+    justify-content: center;
+}
+
+.nav_second ul li {
+    margin: 0 10px;
+}
+
+.dash li:nth-child(1) a {
+    color: #6691E7;
+}
+
+.nav_second ul li a {
+    color: #6d7080;
+    font-weight: 400;
+}
+
+.nav_second ul li a:hover {
+    color: #6691E7;
+}
+
+.nav_second ul li a i {
+    margin: 0 5px;
+    font-size: 14px;
+}
+
+.bow {
+    font-size: 11px !important;
+}
+
+/* Nav Hover */
+
+.cat-wrapper {
+    position: relative;
+}
+
+.nav {
+    padding: 10px 0;
+}
+
+.nav-op {
+    width: 180px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(15, 34, 58, .15);
+    background-color: white;
+    padding: 10px;
+    position: absolute;
+    top: 60px;
+    transition: .3s all;
+    opacity: 0;
+}
+
+.base-ui {
+    width: 340px !important;
+    justify-content: space-evenly;
+}
+
+.nav-op ul li a {
+    font-size: 15px;
+}
+
+.nav-op ul li {
+    margin: 15px 10px !important;
+}
+
+.dash-op ul li:nth-child(5) a {
+    color: #6691E7;
+}
+
+.nav:hover+.nav-op {
+    top: 40px;
+    opacity: 1;
+}

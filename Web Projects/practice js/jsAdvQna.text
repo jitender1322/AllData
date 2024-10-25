@@ -1,0 +1,400 @@
+Q.1 What is JavaScript. How to use it? 
+
+ans. Javascript is a single threaded language. It is use to develop web pages and create
+     dyanamic user friendly websites.
+
+Q.2 How many type of Variable in JavaScript?
+
+ans. In js there is three type of variables => var, let, const.
+
+Q.3 Define a Data Types in js?
+
+ans. In js we use two type of data => premitive dataType and Non premitive dataType
+     
+     premitive => string, number, boolean, undefined, null, symbol
+     nonpremitive => array, objecct
+
+Q.4 Write a mul Function Which will Work Properly When invoked With Following Syntax.
+
+ans. This is an example of multiply function 
+
+    function mul(a,b){
+        console.log(a*b)
+    };
+    
+    mul();
+
+Q.5 What the deference between undefined and undeclare in JavaScript?
+
+ans. If we create a variable but not assign value then it gives undefined and if the variable 
+     not created or or never existed in our script it gives undeclared.
+
+Q.6 Using console.log() print out the following statement: The quote 'There is no exercise
+    better for the heart than reaching down and lifting people up.' by John Holmes teaches us         to help one another. Using console.log() print out the following quote by Mother Teresa ?
+
+ans. console.log("There is no exercise better for the heart than reaching down and lifting people up.");
+     console.log("teaches us to help one another.");
+
+Q.7 Check if typeof '10' is exactly equal to 10. If not make it exactly equal?
+
+ans. let num = '10';
+     let num2 = 10;
+
+     if we use == then this is true but if we use === then it will we false. So for make it exactly
+     equal to it we have to convert the type of num to a number using parseInt() method.
+    
+    if(parseInt(num)===num2) => this is true;
+
+Q.8 Write a JavaScript Program to find the area of a triangle? 
+
+ans. function area(l,b){
+    console.log(0.5 * l * b);
+}
+
+Q.10 What is Condition Statement? 
+
+ans. In js if we have to perform a task whenever the given situation return true so we use conditonal 
+     statement. There is if, if else, if elseif else, while , dowhile.
+
+Q.11 Find circumference of Rectangle? formula : C = 4 * a
+
+ans. function circumference(a){
+    console.log(4 * a);
+}
+
+Q.13 Convert temperature Fahrenheit to Celsius?
+
+ans. let Fahrenheit = 122;
+     let Celsius = (Fahrenheit - 32) * 5 / 9;
+     console.log(Celsius);
+
+Q.15 What is the result of the expression (5 > 3 && 2 < 4)? 
+
+ans. In this statement it returns true because both comparison are true. If one of them is false, it return false
+     because of && opretor.
+
+Q.16 What is the result of the expression (true && 1 && "hello")? 
+
+ans. This statement return true because all given value in expression are truthy value.
+
+Q.17 What is the result of the expression true && false || false && true? 
+
+ans. This expression return false because if we break this true && false gives false , false || false gives false,
+     false && true gives false so final output is false.
+
+Q.18 What is a Loop and Switch Case in JavaScript define that ? 
+
+ans. Loop => if have to perform a task for certain number of time.
+     Switch Case => in this we give an expression and certain number of cases. When the first case match with 
+                    expression value, it return true.
+
+Q.19 What is the use of is Nan function?
+
+ans. Nan function is exists for checking the given value is not a number.
+
+Q.20 What is the difference between && and || in JavaScript?
+
+ans. In && opretor both condition have to be true to execute and || in this if one condition is true 
+     from the given it will be execute.
+
+Q.22 Check Number Is Positive or Negative in JavaScript ?
+
+ans.  let num = 25;
+
+      if (num < 0) {
+      console.log('value is negative');
+    }
+      else {
+      console.log('value is positive');
+    }
+
+Q.23 Find the Character Is Vowel or Not ?
+
+ans. let char = 'k';
+     if (char == 'a' || char == 'e' || char == 'i' || char == 'o' || char == 'u') {
+        console.log('This is a Vowel');
+    }
+    else {
+        console.log('This is not a Vowel');
+    }
+
+Q.24 Write to check whether a number is negative, positive or zero ?
+
+ans. let num = -1;
+    
+    if (num < 0) {
+        console.log('value is negative');
+    }
+    else if (num == 0) {
+        console.log('value is Zero');
+    }
+    else {
+        console.log('value is Positive');
+    }
+
+Q.25 Write to find number is even or odd using ternary operator in JS ?
+
+ans. let number = 7;
+     let result = (number % 2 === 0) ? "Even" : "Odd";
+     console.log(result);
+
+Q.28 Write to find the largest of three numbers in JS? 
+
+ans. function Maximum(a,b,c){
+	return Math.max(a,b,c);
+	};
+Q.29 Write to show 
+
+i. Monday to Sunday using switch case in JS? 
+ans. let num = e;
+	switch(num){
+		case 1:
+		console.log("Monday");
+		break;
+		case 2:
+		console.log("Tuesday");
+		break;
+		case 3:
+		console.log("Wednesday");
+		break;
+		case 4:
+		console.log("Thursday");
+		break;
+		case 5:
+		console.log("Friday");
+		break;
+		case 6:
+		console.log("Saturday");
+		break;
+		case 7:
+		console.log("Sunday");
+		break;
+		}
+
+ii. Vowel or Consonant using switch case in JS?  
+ans. let char = "b";
+		switch (char) {
+  			case "a":
+    			console.log(`This is a vowel => ${char}`);
+    			break;
+  			case "e":
+    			console.log(`This is a vowel => ${char}`);
+    			break;
+  			case "i":
+    			console.log(`This is a vowel => ${char}`);
+    			break;
+  			case "o":
+    			console.log(`This is a vowel => ${char}`);
+    			break;
+  			case "u":
+    			console.log(`This is a vowel => ${char}`);
+    			break;
+  			default:
+    			console.log(`This is a constant => ${char}`);
+			}
+
+Q.30 What are the looping structures in JavaScript? Any one Example? 
+ans. Java Script provides vast looping structure. It includes loops like for, while, do..while,
+	for..in,for..of,for..each.
+
+	Exp. for(let i=1;i<=5;i++){
+		console.log(i);
+		};
+
+Q.31 Write a print 972 to 897 using for loop in JS?  
+ans. for(let i=972;i>=897;i--){
+	console.log(i);
+	};  
+
+Q.32 Write to print factorial of given number?
+ans. let a = 5;
+        let ans = 1;
+        for (let i = 1; i <= a; i++) {
+        ans = ans * i;
+        console.log(ans);
+        };
+
+Q.33 Write to print Fibonacci series up to given numbers ?
+ans. let a = 0;
+        let b = 1;
+        for (let i = 1; i <= 5; i++) {
+        let c = a + b;
+        console.log(c);
+        a = b;
+        b = c;
+        };
+     
+Q.34 Write to print number in reverse order e.g.: number = 64728 --- > reverse =82746 in JS?
+ans. let num = 12345;
+        let reverse = String(num).split(' ').reverse().join(' ');
+        console.log(reverse);
+
+Q.35 Write a program make a summation of given number(E.g., 1523 Ans:11) in JS ?
+ ans.let num = 12345;
+        let result = 0;
+        let sum = num.toString();
+        for (i = 0; i < sum.length; i++) {
+            result = result + parseInt(sum[i]);
+        }
+        console.log(result);
+
+Q.36 Write a program you have to make a summation of first and last Digit. (E.g., 1234 Ans: -5) in JS ?
+ans. let num = 12349;
+        let out = num.toString();
+        let result = parseInt(out[0]) + parseInt(out[out.length - 1]);
+        console.log(result);
+
+Q.37 Use console.log() and escape characters to print the following pattern in JS ?
+ans. for (let i = 1; i <= 5; i++) {
+            console.log(i + '1' + i + i * i + i * i * i);
+        };
+
+Q.38 Use pattern in console.log in JS ?
+ans.
+        p.1
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j < i; j++) {
+                if(j%2==0){
+		document.write(0);
+		}else{
+		document.write(1);
+		}
+            }
+            document.write('<br>')
+        }
+
+
+        p.2
+	let char = 65;
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j <= i; j++) {
+                document.write(String.fromCharCode(char);
+		char++;
+            }
+            document.write('<br>');
+        }
+
+	p.3
+	let n = 1;
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j < i; j++) {
+                document.write(n);
+                n++;
+            }
+            document.write('<br>')
+        };
+	
+
+        p.4
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j < i; j++) {
+                document.write('*')
+            }
+            document.write('<br>')
+        }
+
+Q.40 Write a JavaScript Program to display the current day and time in the following format. 
+Sample Output: Today is Friday. Current Time is 12 PM: 12 : 22 2 ?
+
+ans. let dd = new Date();
+        let days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+        let day = dd.getDay();
+        let tym = dd.getHours();
+        let min = dd.getMinutes();
+        console.log(`today is ${days[day]} current time is ${tym - 12}:${min}`);
+
+Q.41 Write a JavaScript program to get the current date?
+ans. let dd = new Date();
+        let date = dd.getDate();
+        let month = dd.getMonth() + 1;
+        let year = dd.getFullYear();
+        console.log(`Date ${date}-${month}-${year}`);
+
+Q.44 Write a JavaScript program to capitalize first letter of a string?  
+ans. let name = "jitender";
+        let firstletter = name.charAt(0).toUpperCase() + name.slice(1)
+        console.log(firstletter);
+
+Q. 45 Write a JavaScript program to determine if a variable is array?
+ans. We use isArray method to determine this.
+
+Q.46 Write a JavaScript program to clone an array? 
+ans. let arr = [1, 2, 3, 4];
+        let arr2 = [];
+        for (let i = 0; i < arr.length; i++) {
+            arr2.push(arr[i]);
+        };
+
+Q.47 What is the drawback of declaring methods directly in JavaScript objects?  
+ans. Declaring method directly in objects increase memory usage because of duplicating methods
+	for eacg instance. It also create issue while modification in method.
+
+Q.48 Print the length of the string on the browser console using console.log()?  
+ans. let str="jitender";
+	console.log(str.length);
+
+Q.49 Change all the string characters to capital letters using toUpperCase() method?  
+ans.  let str="jitender";
+	let str2=str.toUpperCase();
+	console.log(str2);
+
+Q.52 Use indexOf to determine the position of the first occurrence of a in 	30 Days Of JavaScript?
+ans. let str = "30 Days Of JavaScript";
+	let index = str.indexOf('a');
+	console.log(index); 
+
+Q,53 Use lastIndexOf to determine the position of the last occurrence of a 	in 30 Days Of JavaScript? 
+ans. let str = "30 Days Of JavaScript";
+	let lastIndex = str.lastIndexOf('a');
+	console.log(lastIndex); 
+
+Q.54 Form Validtion in JS?  
+ans. Form validation in JavaScript is the process of ensuring that user  	input meets the required criteria before the form data is submitted to 	the server. 
+
+Q.55 Form in Email, number, Password, Validation?  
+ans. This can be achieved by using JavaScript to check for empty fields, 	proper formats matching emial,number,passwords, and other custom 	validations.
+
+Q.56 Dynamic Form Validation in JS?  
+ans. Dynamic form validation in JavaScript refers to the process of 	validating form input in real-time as the user interacts with the 	form, rather than only validating once the form is submitted. 
+
+Q.57 how many type of JS Event? How to use it ?  
+ans. There are several types of events in JavaScript. These include mouse 	events (e.g., click, dblclick, mouseover, mouseout), keyboard events 	(e.g., keydown, keypress, keyup), form events (e.g., submit, change, 	focus, blur), window events (e.g., load, resize, scroll), and document 	events (e.g., DOMContentLoaded).
+
+	To use these events, you typically attach event listeners to HTML 	elements using methods like addEventListener().
+
+Q.58 What is Bom vs Dom in JS?  
+ans, Bom represent browser object model and Dom represent document
+	obeject model. Bom contain browser related features providing 	methods and properties to interact with the browser.DOM enables 	dynamic access and modification of the content, structure, and style 	of a webpage, facilitating interactive web applications.
+
+Q.59 Array vs object defences in JS?  
+ans. Arrays are collection of data types. We can store string, number 
+	boolean, object and many data types in array. Array provide many
+	methods with it like push, pop, splice, slice, shift, unshift and many 
+	more,
+
+	Object are collection of key value pair. Where values are accessed
+	by key name, 
+
+Q.60 Split the string into an array using split() Method?  
+ans, let name = "jitender";
+	console.log(name.split('');
+
+Q.61 Check if the string contains a word Script using includes() method? 
+ans. let str = 'javascript';
+	console.log(str.includes('script'));
+
+Q.62 Change all the string characters to lowercase letters using toLowerCase() Method. 
+ans. let str = 'JITENDER';
+	console.log(str.toLowercase());
+
+Q.63 What is Character at index 15 in ’30 Days of JavaScript’ string? Use charAt() method.
+ans. let str = '30 Days of JavaScript';
+	console.log(str.charAt(15));
+
+Q.64 copy to one string to another string in JS?  
+ans, let str = "jitender";
+	let str2=str;
+
+Q.65 Find the length of a string without using libraryFunction? 
+ans. let str='jitender';
+	console.log(str.length);

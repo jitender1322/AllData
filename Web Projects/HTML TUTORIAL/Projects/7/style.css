@@ -1,0 +1,154 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  font-family: "Quicksand", sans-serif;
+
+  letter-spacing: 2px;
+}
+.main {
+  background-image: url(/Projects/7/hero_image.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 1263px;
+  height: 100vh;
+  color: white;
+}
+.container {
+  background-color: #000476;
+  width: 100%;
+  height: 75px;
+  position: sticky;
+}
+.container h1 {
+  padding-top: 30px;
+  margin-top: 0px;
+}
+.navbar {
+  display: flex;
+  justify-content: end;
+}
+.main ul {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  transition: 0.3s ease-in-out;
+}
+.container ul li {
+  list-style: none;
+  padding: 15px 13px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.3s ease-in-out;
+}
+.container ul :hover {
+  border-bottom: 1px solid white;
+  transition: 0.3s ease-in-out;
+}
+.text {
+  text-align: center;
+  margin-top: 10rem;
+}
+.text .head {
+  font-size: 5rem;
+  margin-bottom: 5rem;
+}
+.text1 {
+  text-align: center;
+  background-color: rgb(10, 10, 104);
+  color: white;
+  height: 100vh;
+}
+.text1 h1 {
+  margin: 0;
+  padding-top: 28px;
+}
+.text1 p {
+  text-align: justify;
+  padding: 12px;
+  line-height: 20px;
+}
+.text1 .btn {
+  background-color: red;
+  padding: 12px 23px;
+  border: none;
+  color: white;
+  border-radius: 7px;
+}
+.text1 .p1 {
+  color: aqua;
+  padding-top: 13px;
+  text-align: center;
+}
+.art1 {
+  height: 100vh;
+  text-align: center;
+}
+.art1 h3 {
+  margin-top: 28rem;
+}
+.art1 p {
+  color: rgb(40, 100, 100);
+}
+.art1 .btn {
+  background-color: rgb(10, 10, 104);
+  padding: 12px 23px;
+  border: none;
+  color: white;
+  margin: 2rem 0px;
+  border-radius: 7px;
+}
+.art2 {
+  margin-top: 18rem;
+  height: 100vh;
+  background-image: url(/Projects/7/hero_image.png);
+  text-align: center;
+  color: white;
+}
+.text2 {
+  padding-top: 15rem;
+}
+.gift {
+  display: flex;
+  margin: 5rem 0px;
+}
+.gift .text3 {
+  padding-left: 3rem;
+}
+.gift .btn {
+  background-color: rgb(10, 10, 104);
+  padding: 12px 23px;
+  border: none;
+  color: white;
+  margin-top: 2rem;
+  border-radius: 7px;
+}
+.foot {
+  height: 30vh;
+  display: flex;
+  justify-content: space-between;
+  background-color: #000476;
+  color: white;
+  text-align: start;
+  padding: 12px;
+}
+.foot li {
+  list-style: none;
+  padding-right: 8px;
+}
+.foot h3 {
+  border-bottom: 2px solid white;
+}
+.foot1 {
+  background-color: navy;
+  height: 4rem;
+  color: white;
+  text-align: center;
+}
+.foot1 p {
+  margin: 0;
+  padding: 17px 0px;
+}

@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: khaki;
+}
+
+main {
+    text-align: center;
+    margin-top: 15rem;
+}
+
+.btn {
+    font-size: 2rem;
+    padding: 15px 30px;
+    background-color: chartreuse;
+    color: white;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    font-family: serif;
+}
+
+
+.btn:hover {
+    background-color: white;
+    color: chartreuse;
+    transform: scale(1.09);
+}

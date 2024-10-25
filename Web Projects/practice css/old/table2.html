@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+        }
+
+        .formBody {
+            padding: 0 40px;
+        }
+
+        .admissionBtn {
+            position: absolute;
+            bottom: -25%;
+            left: 15%;
+            text-align: center;
+        }
+
+        .admissionBtn button {
+            padding: 10px 30px;
+            color: white;
+            background-color: red;
+            cursor: pointer;
+            border: none;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .admissionBtn p {
+            color: black;
+            font-size: 12px;
+            margin: 5px 0;
+        }
+
+        .head {
+            background-color: blueviolet;
+            color: white;
+            justify-content: space-between;
+            padding: 0px 40px;
+            position: relative;
+        }
+
+        input {
+            border: none;
+            border-bottom: 1px solid black;
+            outline: none;
+        }
+
+        label {
+            font-weight: 700;
+        }
+
+        .schoolInfo img {
+            width: 30%;
+        }
+
+        .box {
+            width: 120px;
+            height: 150px;
+            background-color: white;
+            border: 2px solid black;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .box p {
+            color: black;
+            font-weight: 700;
+        }
+
+        .schoolName ul li {
+            margin: 10px;
+        }
+
+        .schoolName h4 {
+            border-bottom: 2px dotted white;
+            padding-bottom: 5px;
+        }
+
+        .schoolName ul li:nth-child(1) {
+            list-style: none;
+            margin: 10px 10px 10px 0;
+        }
+
+        .formHead {
+            position: relative;
+            margin-top: 60px;
+            justify-content: space-between;
+        }
+
+        .col-1 input {
+            margin: 0 30px 0 0;
+        }
+
+        .col-1 p {
+            font-weight: 600;
+            color: red;
+            margin: 20px 0;
+        }
+
+        .col-2 button {
+            padding: 10px 20px;
+            color: white;
+            background-color: blueviolet;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        .it input {
+            width: 60%;
+        }
+
+        .col-2 {
+            position: absolute;
+            right: -3%;
+            top: -50px;
+        }
+
+        .officeUse {
+            padding: 5px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        .formInfo {
+            margin-top: 60px;
+        }
+
+        .name input {
+            width: 90%;
+        }
+
+        .mName input {
+            width: 85%;
+            margin: 15px 0;
+        }
+
+        .parents {
+            justify-content: space-around;
+            margin: 5px 0;
+        }
+
+        .dob input[type='text'] {
+            width: 30%;
+        }
+
+        .dob input[type='checkbox']::before {
+            content: '';
+            padding: 15px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="schoolForm">
+        <div class="head flex">
+            <div class="schoolInfo flex">
+                <img src="./logo.png" alt="">
+                <div class="schoolName">
+                    <h1>IMPERIAL</h1>
+                    <h4>SCHOOL OF EXCELLENCE</h4>
+                    <ul class="flex">
+                        <li>LEARN</li>
+                        <li>EXCEL</li>
+                        <li>LEAD</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box flex">
+                <p>Affix Child's Photo</p>
+            </div>
+            <div class="admissionBtn">
+                <button class="">Admission Form</button>
+                <p>(Nursery,Jr. KG, Sr. KG, English Medium)</p>
+            </div>
+        </div>
+        <div class="formBody">
+            <div class="formHead flex">
+                <div class="col-1">
+                    <label>Form No.:</label>
+                    <input type="number">
+                    <label>Admission for Std.:</label>
+                    <input type="text">
+                    <p>Please fill each deatails in block LETTERS</p>
+                </div>
+                <div class="col-2">
+                    <button>For Office Use</button>
+                    <div class="officeUse">
+                        <div class="it">
+                            <label>F.R. No.:</label>
+                            <input type="text">
+                        </div>
+                        <div>
+                            <label>Std.:</label>
+                            <input type="text">
+                        </div>
+                        <div class="it">
+                            <label>Amount:</label>
+                            <input type="text">
+                        </div>
+                        <div>
+                            <label>Sign:</label>
+                            <input type="text">
+                        </div>
+                        <div>
+                            <label>Date:</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formInfo">
+                <div class="name">
+                    <label>Name:</label>
+                    <input type="text">
+                    <div class="parents flex">
+                        <span>(Surname)</span>
+                        <span>(Name of the Child)</span>
+                        <span>(Father's Name)</span>
+                    </div>
+                </div>
+                <div class="mName">
+                    <label>Mother's Name:</label>
+                    <input type="text">
+                </div>
+                <div class="dob">
+                    <label>Date of Birth</label>
+                    <input type="text">
+                    <input type="radio" name="gender">
+                    <label>Boy</label>
+                    <input type="radio" name="gender">
+                    <label>Girl</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

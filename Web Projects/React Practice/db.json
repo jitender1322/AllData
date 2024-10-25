@@ -1,0 +1,55 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Hello World",
+      "content": "Welcome to learning JSON Server!"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe"
+    },
+    {
+      "id": "efbd",
+      "title": "New Post",
+      "content": "This is a new post."
+    },
+    {
+      "id": "aea9",
+      "title": "New Post",
+      "content": "This is a new post."
+    },
+    {
+      "id": "b3f5",
+      "title": "New Post",
+      "content": "This is a new post."
+    },
+    {
+      "id": "0437",
+      "title": "New Post",
+      "content": "This is a new post."
+    },
+    {
+      "id": "b395",
+      "title": "New Post",
+      "content": "This is a new post."
+    },
+    {
+      "id": "6eb4",
+      "title": "New Post",
+      "content": "This is a new post."
+    },
+    {
+      "id": "5a51",
+      "title": "New Post",
+      "content": "This is a new post."
+    },
+    {
+      "id": "938c",
+      "title": "New Post",
+      "content": "This is a new post."
+    }
+  ]
+}

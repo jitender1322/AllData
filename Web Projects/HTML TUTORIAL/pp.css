@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-transform: capitalize;
+}
+
+body {
+    background-color: rgba(212, 111, 112, .2);
+}
+
+.nav {
+    height: 60px;
+    background-color: #0f1111;
+}
+
+a {
+    margin-right: 190px;
+    text-decoration: none;
+}
+
+.logo {
+    color: #f08804;
+    font-size: 25px;
+}
+
+button {
+    background-color: #f08804;
+    border: none;
+    padding: 3px;
+}

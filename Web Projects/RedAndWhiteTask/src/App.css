@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 40%;
+    margin: 50px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin: 5px 0;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+span {
+    font-size: 14px;
+    margin-top: 20px;
+    display: inline-block;
+    color: blue;
+    cursor: pointer;
+}
+
+.sign-in-container {
+    width: 40%;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.sign-in-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 4px;
+}
+
+.container h1 {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 35px;
+}
+
+.container h4 {
+    text-align: center;
+    font-size: 25px;
+}
+
+.form {
+    text-align: center;
+    width: 60%;
+    padding: 30px 0px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(46, 48, 78, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(210, 208, 208, 0.45);
+}
+
+.form button {
+    margin: 10px 0;
+    padding: 10px 20px;
+    background: rgba(54, 39, 39, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: white;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.form input,
+.form select {
+    background: rgba(54, 39, 39, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 10px 15px;
+    margin: 10px 15px;
+    color: white;
+    outline: none;
+    font-weight: 800;
+    width: 40%;
+}
+
+.form input::placeholder {
+    color: white;
+    font-weight: 500;
+}
+
+.task-table {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.form button {
+    width: 20%;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background-color: #444;
+}
+
+tr:nth-child(even) {
+    background-color: #3a3a3a;
+}
+
+tr:nth-child(odd) {
+    background-color: #383838;
+}
+
+button:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #4cae4c;
+}
+
+.filter {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.filter select {
+    width: 160px;
+}

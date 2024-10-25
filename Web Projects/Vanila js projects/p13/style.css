@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: aliceblue;
+}
+
+main {
+    text-align: center;
+    margin-top: 5rem;
+    background-color: aliceblue;
+    letter-spacing: 2px;
+}
+
+.section-center h2 {
+    text-transform: uppercase;
+    color: rgb(60, 42, 79);
+}
+
+.section-center label {
+    font-size: 1.4rem;
+    color: rgb(60, 42, 79);
+}
+
+.section-center input {
+    width: 3rem;
+    background-color: white;
+    border: none;
+    font-size: 1.4rem;
+    border-radius: 12px;
+    color: rgb(53, 134, 107);
+}
+
+.btn {
+    padding: 12px 27px;
+    border-radius: 5px;
+    background-color: rgb(88, 76, 160);
+    color: white;
+    transition: .4s ease-in-out;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+.btn:hover {
+    background-color: white;
+    color: rgb(88, 76, 160);
+    border: 2px solid rgb(88, 76, 160);
+}
+
+.lorem-text {
+    color: rgb(53, 134, 107);
+    text-align: center;
+    line-height: 30px;
+
+    width: 30rem;
+    margin: 2rem auto;
+}

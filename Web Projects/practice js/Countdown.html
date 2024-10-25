@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown & Quotes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #countdown {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #quote {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            display: inline-block;
+        }
+
+        #newQuoteBtn {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="countdown">Countdown: 00d 00h 00m 00s</div>
+    <div id="quote">"This is where a quote will appear."</div>
+    <button id="newQuoteBtn">New Quote</button>
+
+    <script>
+        // Countdown Timer
+        function startCountdown(targetDate) {
+            const countdownElement = document.getElementById('countdown');
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const timeLeft = targetDate - now;
+
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                countdownElement.textContent = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+                if (timeLeft < 0) {
+                    clearInterval(timerInterval);
+                    countdownElement.textContent = "The countdown is over!";
+                }
+            }
+
+            updateCountdown();
+            const timerInterval = setInterval(updateCountdown, 1000);
+        }
+
+        // Set target date (Example: January 1, 2025)
+        const targetDate = new Date('2024-10-30').getTime();
+        startCountdown(targetDate);
+
+        // Quotes Data
+        const quotes = [
+            "The best way to predict the future is to create it.",
+            "Do not wait to strike till the iron is hot; but make it hot by striking.",
+            "Whether you think you can or you think you can’t, you’re right.",
+            "The only limit to our realization of tomorrow is our doubts of today.",
+            "The future belongs to those who believe in the beauty of their dreams.",
+            "The best revenge is massive success.",
+            "Your time is limited, don’t waste it living someone else’s life.",
+            "Success is not the key to happiness. Happiness is the key to success."
+        ];
+
+        // Random Quote Generator
+        function displayRandomQuote() {
+            const quoteElement = document.getElementById('quote');
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            quoteElement.textContent = `"${quotes[randomIndex]}"`;
+        }
+
+        // Display a random quote when the page loads
+        displayRandomQuote();
+
+        // New Quote Button
+        const newQuoteBtn = document.getElementById('newQuoteBtn');
+        newQuoteBtn.addEventListener('click', displayRandomQuote);
+
+    </script>
+</body>
+
+</html>

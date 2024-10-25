@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+}
+html {
+  scroll-behavior: smooth;
+}
+#home {
+  background: url(/p10/pexels-aron-visuals-1743165.jpg) center/cover no-repeat;
+  height: 100vh;
+}
+#nav {
+  background-color: #ffffff;
+  transition: 0.3s ease-in-out;
+  height: 4rem;
+  align-items: center;
+}
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+}
+.links {
+  list-style: none;
+}
+.links li {
+  padding-bottom: 12px;
+  transition: 0.3s ease-in-out;
+}
+.links li:hover {
+  background-color: aliceblue;
+}
+.links a {
+  text-decoration: none;
+  color: rgb(49, 34, 34);
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  transition: 0.3s ease-in-out;
+}
+.links a:hover {
+  color: black;
+}
+.show-links {
+  height: 0px;
+  display: none;
+  transition: 0.3s ease-in-out;
+  overflow: hidden;
+}
+.links-container {
+  height: 160px;
+  padding-bottom: 6px;
+  transition: 0.3s ease-in-out;
+  background-color: #ffffff;
+}
+.nav-toggle {
+  background-color: transparent;
+  font-size: 2rem;
+  color: aqua;
+  border: transparent;
+  cursor: pointer;
+}
+@media screen and (min-width: 800px) {
+  .nav-center {
+    width: 90vw;
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .links {
+    display: flex;
+    color: rgb(11, 46, 76);
+  }
+  .links-container {
+    display: inline;
+    background-color: transparent;
+    height: auto;
+  }
+  .links li:hover {
+    background-color: transparent;
+  }
+  .links a {
+    color: aliceblue;
+    padding: 12px;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  #nav {
+    background-color: transparent;
+  }
+}
+.banner {
+  color: white;
+  text-align: center;
+  margin-top: 10rem;
+  letter-spacing: 2px;
+}
+.container h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.container p {
+  text-align: center;
+  font-size: 1.3rem;
+}
+.container a {
+  text-decoration: none;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 8px 22px;
+  letter-spacing: 3px;
+  transition: 0.3s ease-in-out;
+}
+.container a:hover {
+  background-color: white;
+  color: rgb(0, 195, 255);
+}
+#about,
+#services,
+#tours {
+  text-align: center;
+  height: 80vh;
+  transition: 0.3s ease-in-out;
+}
+.section h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  color: rgb(58, 65, 72);
+}
+.section span {
+  color: aqua;
+  text-transform: uppercase;
+}
+.footer {
+  background-color: rgb(2, 2, 74);
+  color: white;
+  height: 6rem;
+  text-align: center;
+  font-size: 1.3rem;
+  padding-top: 30px;
+}

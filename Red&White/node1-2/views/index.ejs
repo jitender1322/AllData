@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>express mvc structure</h1>
+
+    <form action="/insert" enctype="multipart/form-data" method="post">
+        <input type="text" name="name" placeholder="Enter Your Name">
+        <input type="text" name="subject" placeholder="Enter Your subject">
+        <label>Male</label>
+        <input type="radio" value="male" name="gender">
+        <label>Female</label>
+        <input type="radio" value="female" name="gender">
+        <select name="city">
+            <option hidden>Select City</option>
+            <option value="junagadh">junagadh</option>
+            <option value="surat">surat</option>
+            <option value="rajkot">rajkot</option>
+            <option value="navsari">navsari</option>
+            <option value="bhavnagar">bhavnagar</option>
+            <option value="diu">diu</option>
+        </select>
+        <h2>Hobby</h2>
+        <input type="checkbox" value="singing" name="hobby">
+        <label>Singing</label>
+        <input type="checkbox" value="reading" name="hobby">
+        <label>Reading</label>
+        <input type="checkbox" value="writing" name="hobby">
+        <label>Writing</label>
+        <input type="file" name="image"><br>
+        <input type="submit">
+    </form>
+    <table border="1" width="70%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>Gender</th>
+                <th>City</th>
+                <th>Hobby</th>
+                <th>Image</th>
+                <th colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.map((e,i)=>{ %>
+
+                <tr>
+                    <td>
+                        <%= e.name %>
+                    </td>
+                    <td>
+                        <%= e.subject %>
+                    </td>
+                    <td>
+                        <%= e.gender %>
+                    </td>
+                    <td>
+                        <%= e.city %>
+                    </td>
+                    <td>
+                        <%= e.hobby %>
+                    </td>
+                    <td><img src="<%= e.image %>" width="20%" alt=""></td>
+                    <td><a href="/editData?id=<%=e.id%>"><button>Edit</button></a></td>
+                    <td><a href="/deleteData?id=<%=e.id%>"><button>Delete</button></a></td>
+                </tr>
+
+                <%}) %>
+        </tbody>
+    </table>
+</body>
+
+</html>

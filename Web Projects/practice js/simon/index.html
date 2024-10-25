@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 50%;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        .box p {
+            margin: 10px 0;
+        }
+
+        .g-1 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            width: 140px;
+            height: 140px;
+            border-radius: 15px;
+            margin: 10px;
+            border: 5px solid black;
+            cursor: pointer;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .skyblue {
+            background-color: skyblue;
+        }
+
+        .purple {
+            background-color: purple;
+        }
+
+        .flash {
+            background-color: white;
+        }
+
+        .userflash {
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Simon Game</h1>
+        <p id="level">Press Any Key To Start The Game</p>
+        <div class="game">
+            <div class="g-1">
+                <div class="red btn" id="red"></div>
+                <div class="green btn" id="green"></div>
+            </div>
+            <div class="g-1">
+                <div class="skyblue btn" id="skyblue"></div>
+                <div class="purple btn" id="purple"></div>
+            </div>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+
+</html>

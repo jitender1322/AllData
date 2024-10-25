@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOARD OF SECONDRY EDUCATION</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-areas:
+                'navbar navbar navbar '
+                'aside section section '
+                'footer footer footer ';
+            grid-template-columns: 1fr 2fr 2fr;
+            grid-template-rows: 110px 3fr 93px;
+
+        }
+
+        #navbar {
+            grid-area: navbar;
+            background: #2d6393;
+            color: white;
+        }
+
+        #section {
+            grid-area: section;
+            background-color: #f2e7bd;
+            ;
+        }
+
+        #aside {
+            grid-area: aside;
+            background: #2d6393;
+            color: white;
+        }
+
+        #footer {
+            grid-area: footer;
+            background: #2d6393;
+            color: white;
+        }
+
+        #title img {
+            width: 70px;
+            padding: 2px 7px;
+        }
+
+        #title {
+            display: flex;
+        }
+
+        .head {
+            font-size: 2rem;
+            display: block;
+            margin: auto;
+        }
+
+        #navbar ul {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 80px;
+            left: 240px;
+        }
+
+        #navbar ul li {
+            list-style: none;
+            padding: 3px 2px;
+
+        }
+
+        #aside li {
+            list-style: square;
+        }
+
+        #section img {
+            height: 130px;
+            width: 130px;
+            padding: 30px 65px;
+        }
+
+        #pm {
+            display: flex;
+        }
+
+        #cm {
+            display: flex;
+        }
+
+        #section #info {
+            border: 1px solid blue;
+            position: absolute;
+            top: 185px;
+            right: 25px;
+            height: 315px;
+            width: 400px;
+        }
+
+        #section #in .pi {
+            position: absolute;
+            top: 100px;
+            right: 0px;
+            width: 390px;
+        }
+
+        #section #in .pil {
+            position: absolute;
+            top: 145px;
+            right: 170px;
+        }
+
+        #info .ne {
+            color: blue;
+            text-align: center;
+            font-size: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="navbar" class="item">
+            <div id="title">
+                <img src="/img/logo-bw.jpg" alt="ed">
+                <h1 class="head">BOARD OF SECONDRY EDUCATION,RAJSTHAN</h1>
+            </div>
+            <ul>
+                <li class="li">Home | |</li>
+                <li class="li">Property Declaration | |</li>
+                <li class="li">Downloads | |</li>
+                <li class="li">Sitemap | |</li>
+                <li class="li">Postal Enquiry | |</li>
+            </ul>
+        </div>
+
+        <div id="section" class="item">
+            <cm id="pm">
+                <div class="cm">
+                    <img src="/Ajmer Board/img/cm.jpg" alt="0">
+                </div>
+                <div class="cm">
+                    <img src="/Ajmer Board/img/dr.jpg" alt="0">
+                </div>
+            </cm>
+
+            <pm id="cm">
+                <div class="cm">
+                    <img src="/Ajmer Board/img/khan.jpg" alt="0">
+                </div>
+                <div class="cm">
+                    <img src="/Ajmer Board/img/building.jpg" alt="0">
+                </div>
+            </pm>
+            <box id="in" class="info">
+                <p class="pi">सूचना का अधिकार अधिनियम, 2005 (2005 का केंद्रीय अधिनियम संख्या - 22 ) </p>
+                <p class="pil"><b>विभागीय मेन्युअल</b></p>
+
+                <div id="info">
+                    <p class="ne"><strong>NEWS UPDATE</strong></p>
+                    <hr>
+                </div>
+            </box>
+        </div>
+
+        <div id="aside" class="item">
+            <ul>
+                <li class="li">Overview</li>
+                <li class="li">राजस्थान बोर्ड शिक्षण पत्रिका</li>
+                <li class="li">अधिनियम एवं विनियम</li>
+                <li class="li">अनुदेशिका 2020 एवं पाठयक्रम 2021-2022</li>
+                <li class="li">Examination</li>
+                <li class="li">Awards</li>
+                <li class="li">Recognition of Institutions</li>
+                <li class="li">Download Various Forms</li>
+                <li class="li">Student's Devlopment</li>
+                <li class="li">Orders</li>
+                <li class="li">Tenders</li>
+                <li class="li">Books/Old Papers/Modals Question</li>
+                <li class="li">Center Sector Scheme of MHRD Scholarship</li>
+                <li class="li">Notifications/Press release</li>
+                <li class="li">Contect List</li>
+
+            </ul>
+        </div>
+        <div id="footer" class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores repudiandae
+            eum doloremque necessitatibus cum, quae amet, veniam a laudantium, dolore temporibus consequatur velit
+            expedita. Nemo aut culpa enim veniam cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+            recusandae cum quia cumque quidem pariatur hic repudiandae. Corrupti, corporis magni. Asperiores cum soluta
+            praesentium sint, id beatae unde excepturi aliquam. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quam quae blanditiis accusantium sit consequuntur repellat, rerum fugiat. Nostrum necessitatibus voluptatem,
+            velit temporibus officiis, aliquid iste nam atque assumenda dolores quod?
+            Lorem ipsum dolor sit Lorem ipsum dolor sit amet, dfsifdjdf
+        </div>
+    </div>
+
+</body>
+
+</html>
