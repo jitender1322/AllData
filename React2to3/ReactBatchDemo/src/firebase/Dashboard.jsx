@@ -15,12 +15,17 @@ export default function Dashboard() {
 
    useEffect(()=>{
     if(user){
-        console.log("hello");
         fetchUser()
     }
    },[user])
 
    const fetchUser = ()=>{
+        console.log(user.uid);
+        getDoc(doc(db,"users",user.uid))
+        .then(data=>{
+            console.log(data.data());
+            
+        })
         
    }
 
