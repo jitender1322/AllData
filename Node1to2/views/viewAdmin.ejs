@@ -12,10 +12,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/public/assets/images/favicon.png">
     <title>Matrix Template - The Ultimate Multipurpose admin template</title>
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="/public/assets/libs/select2/dist/css/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="/public/assets/libs/jquery-minicolors/jquery.minicolors.css">
-    <link rel="stylesheet" type="text/css" href="/public/assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" type="text/css" href="/public/assets/libs/quill/dist/quill.snow.css">
+    <link rel="stylesheet" type="text/css" href="/public/assets/extra-libs/multicheck/multicheck.css">
+    <link href="/public/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
     <link href="/public/dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,14 +40,14 @@
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
-        <%- include("header")%>
+        <%- include("header") %>
         <!-- ============================================================== -->
         <!-- End Topbar header -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-        <%- include("aside")%>
+        <%- include("aside") %>
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
@@ -63,7 +61,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Form Basic</h4>
+                        <h4 class="page-title">Tables</h4>
                         <div class="ml-auto text-right">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
@@ -86,51 +84,37 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-12">
                         <div class="card">
-                            <form class="form-horizontal" action="/addAdmin" method="post">
-                                <div class="card-body">
-                                    <h4 class="card-title">Personal Info</h4>
-                                    <div class="form-group row">
-                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label">Name</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name Here">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="lname" class="col-sm-3 text-right control-label col-form-label"> Email</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email Here">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Password</label>
-                                        <div class="col-sm-9">
-                                            <input type="password" class="form-control" id="lname" name="password" placeholder="Password Here">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="email1" class="col-sm-3 text-right control-label col-form-label">City</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="city" name="city" placeholder="City Name Here">
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="border-top">
-                                    <div class="card-body">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
+                            <div class="card-body">
+                                <h5 class="card-title m-b-0">Static Table</h5>
+                            </div>
+                            <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">#</th>
+                                      <th scope="col">Name</th>
+                                      <th scope="col">Email</th>
+                                      <th scope="col">Password</th>
+                                      <th scope="col">City</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <% data.map((e,i)=>{ %>
+                                    <tr>
+                                      <th scope="row"> <%=i+1 %> </th>
+                                      <td><%= e.name %></td>
+                                      <td><%= e.email %></td>
+                                      <td><%= e.password %></td>
+                                      <td><%= e.city %></td>
+                                    </tr>
+                                <% }) %>
+                                  </tbody>
+                            </table>
                         </div>
-                       
-
-                    </div>
                     
+                    </div>
                 </div>
-                <!-- editor -->
-                
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
@@ -178,60 +162,17 @@
     <script src="/public/dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="/public/dist/js/custom.min.js"></script>
-    <!-- This Page JS -->
-    <script src="/public/assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
-    <script src="/public/dist/js/pages/mask/mask.init.js"></script>
-    <script src="/public/assets/libs/select2/dist/js/select2.full.min.js"></script>
-    <script src="/public/assets/libs/select2/dist/js/select2.min.js"></script>
-    <script src="/public/assets/libs/jquery-asColor/dist/jquery-asColor.min.js"></script>
-    <script src="/public/assets/libs/jquery-asGradient/dist/jquery-asGradient.js"></script>
-    <script src="/public/assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js"></script>
-    <script src="/public/assets/libs/jquery-minicolors/jquery.minicolors.min.js"></script>
-    <script src="/public/assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-    <script src="/public/assets/libs/quill/dist/quill.min.js"></script>
+    <!-- this page js -->
+    <script src="/public/assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
+    <script src="/public/assets/extra-libs/multicheck/jquery.multicheck.js"></script>
+    <script src="/public/assets/extra-libs/DataTables/datatables.min.js"></script>
     <script>
-        //***********************************//
-        // For select 2
-        //***********************************//
-        $(".select2").select2();
-
-        /*colorpicker*/
-        $('.demo').each(function() {
-        //
-        // Dear reader, it's actually very easy to initialize MiniColors. For example:
-        //
-        //  $(selector).minicolors();
-        //
-        // The way I've done it below is just for the demo, so don't get confused
-        // by it. Also, data- attributes aren't supported at this time...they're
-        // only used for this demo.
-        //
-        $(this).minicolors({
-                control: $(this).attr('data-control') || 'hue',
-                position: $(this).attr('data-position') || 'bottom left',
-
-                change: function(value, opacity) {
-                    if (!value) return;
-                    if (opacity) value += ', ' + opacity;
-                    if (typeof console === 'object') {
-                        console.log(value);
-                    }
-                },
-                theme: 'bootstrap'
-            });
-
-        });
-        /*datwpicker*/
-        jQuery('.mydatepicker').datepicker();
-        jQuery('#datepicker-autoclose').datepicker({
-            autoclose: true,
-            todayHighlight: true
-        });
-        var quill = new Quill('#editor', {
-            theme: 'snow'
-        });
-
+        /****************************************
+         *       Basic Table                   *
+         ****************************************/
+        $('#zero_config').DataTable();
     </script>
+
 </body>
 
 </html>

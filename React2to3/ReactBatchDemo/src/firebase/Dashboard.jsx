@@ -9,19 +9,19 @@ export default function Dashboard() {
     let subscribe = onAuthStateChanged(auth,(currentUser)=>{
         if(currentUser){
             setUser(currentUser)
-            console.log(user);
         }
     })
    },[])
 
    useEffect(()=>{
     if(user){
+        console.log("hello");
         fetchUser()
     }
    },[user])
 
    const fetchUser = ()=>{
-    console.log(user);
+        
    }
 
   return (
