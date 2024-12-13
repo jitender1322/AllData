@@ -1,0 +1,16 @@
+div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: rgb(45, 91, 132);
+}
+
+.col {
+  width: 200px;
+  height: 150px;
+  background-color: brown;
+}

@@ -1,20 +1,18 @@
-import React, { useState } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import SignUp from './firebase/SignUp'
-import LogIn from './firebase/LogIn'
-import Dashboard from './firebase/Dashboard'
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
 export default function App() {
+  const [name, setName] = useState();
+  const dispatch = useDispatch();
 
+  const addData = () => {
+    let obj = { id: Date.now(), name };
+    dispatch(addData);
+  };
   return (
     <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' Component={SignUp} ></Route>
-          <Route path='/login' Component={LogIn} ></Route>
-          <Route path='/dashboard' Component={Dashboard} ></Route>
-        </Routes>
-      </BrowserRouter>
+      <input type="text" onChange={(e) => setName(e.target.value)} />
+      <button>Add Data</button>
     </div>
-  )
+  );
 }

@@ -4,39 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style></style>
   </head>
   <body>
-    <h1>welcome to express</h1>
-
+    <h1>MVC</h1>
     <form action="/addData" method="post">
-      <input type="text" placeholder="Enter Your Name" name="name" />
-      <input type="text" placeholder="Enter Your Subject" name="subject" />
+      <input type="text" placeholder="Enter your name" name="name" />
+      <input type="text" placeholder="Enter your subject" name="subject" />
       <button type="submit">Submit</button>
     </form>
-
-    <table border="1" width="100%">
-      <thead>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Subject</th>
-        <th colspan="2">Action</th>
-      </thead>
-      <tbody>
-        <% students.map((e,i)=>{%>
-        <tr>
-          <td><%= e.id %></td>
-          <td><%= e.name %></td>
-          <td><%= e.subject %></td>
-          <td>
-            <button><a href="#">Edit</a></button>
-          </td>
-          <td>
-            <button><a href="/deleteData?id=<%=e.id%>">Delete</a></button>
-          </td>
-        </tr>
-        <% }) %>
-      </tbody>
-    </table>
   </body>
 </html>

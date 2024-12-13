@@ -1,15 +1,13 @@
-import React from "react";
-import { useLocation, useParams } from "react-router-dom";
+import React, { useContext } from "react";
+import { myContext } from "./Home";
 
 export default function Contact() {
-  // const record = useParams();
-  const data = useLocation();
+  const data = useContext(myContext);
+  console.log(data);
+
   return (
     <div>
-      <h1>Contact</h1>
-      <h4>{data?.state?.name}</h4>
-      <h4>{data?.state?.subject}</h4>
-      <h4>{data?.state?.city}</h4>
+      <h1>Contact {data}</h1>
     </div>
   );
 }

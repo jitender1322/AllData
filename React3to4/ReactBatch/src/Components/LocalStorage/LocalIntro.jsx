@@ -39,6 +39,7 @@ export default function LocalIntro() {
     setRecord(data);
     localStorage.setItem("Students", JSON.stringify(data));
   };
+
   const handleEdit = (i) => {
     let singleData = record.find((item) => item.id == i);
 

@@ -1,30 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
+import SignUp from "./Firebase/SignUp";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Read from "./Components/CrudWithRouting/Read";
-import Create from "./Components/CrudWithRouting/Create";
-import Delete from "./Components/CrudWithRouting/Delete";
-import Update from "./Components/CrudWithRouting/Update";
+import LogIn from "./Firebase/LogIn";
+import Dashboard from "./Firebase/Dashboard";
 
 export default function App() {
-  const [record, setRecord] = useState([
-    { id: 1, name: "sumit", subject: "react" },
-    { id: 2, name: "rahul", subject: "node" },
-    { id: 3, name: "ajay", subject: "express" },
-  ]);
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Read data={record} />}></Route>
-          <Route
-            path="/create"
-            element={<Create data={record} setData={setRecord} />}
-          ></Route>
-          <Route
-            path="/delete"
-            element={<Delete data={record} setData={setRecord} />}
-          ></Route>
-          <Route path="/update" element={<Update />}></Route>
+          <Route path="/" Component={SignUp}></Route>
+          <Route path="/login" Component={LogIn}></Route>
+          <Route path="/dashboard" Component={Dashboard}></Route>
         </Routes>
       </BrowserRouter>
     </div>
