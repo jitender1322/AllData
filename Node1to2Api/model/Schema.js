@@ -5,11 +5,11 @@ const firstSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  subject: {
+  email: {
     type: String,
     required: true,
   },
-  city: {
+  password: {
     type: String,
     required: true,
   },

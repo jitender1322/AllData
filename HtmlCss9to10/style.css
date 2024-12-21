@@ -1,16 +1,44 @@
-div {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  background-color: aqua;
+}
+nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-  background-color: rgb(45, 91, 132);
+  margin: 0 100px;
+  padding: 10px 0;
+}
+nav ul {
+  display: flex;
+  gap: 30px;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li a {
+  text-decoration: none;
+}
+#container-wrapper {
+  background-color: antiquewhite;
+}
+#main-container {
+  width: 90%;
+  margin: 0px auto;
+  max-width: 1200px;
+  background-color: aqua;
 }
 
-.col {
-  width: 200px;
-  height: 150px;
-  background-color: brown;
+.boxes {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 10px;
+}
+.boxes > div {
+  width: 22%;
+  height: 200px;
+  background-color: blueviolet;
 }

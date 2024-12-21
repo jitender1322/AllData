@@ -1,8 +1,10 @@
 const express = require("express");
 const route = express.Router();
 const ctl = require("../controller/indexCtl");
+const auth = require("../middleware/auth");
 
-route.get("/", ctl.getRecord);
-route.post("/addRecord", ctl.addRecord);
+route.get("/", auth, ctl.allRecord);
+route.post("/register", ctl.registerUser);
+route.post("/login", ctl.login);
 
 module.exports = route;
