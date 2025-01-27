@@ -15,6 +15,6 @@ const firstSchema = mongoose.Schema({
   },
 });
 
-const Schema = mongoose.model("Api", firstSchema);
+const Schema = mongoose.model("NodeApi", firstSchema);
 
 module.exports = Schema;

@@ -9,11 +9,11 @@ import SignUp from './Components/SignUp'
 export default function App() {
   return (
     <div>
-      {/* <Navbar />
+      <Navbar />
       <SignUp />
-      <Footer /> */}
+      <Footer />
       {/* <HomeBanThree /> */}
-      <HomeBanTwo />
+      {/* <HomeBanTwo /> */}
     </div>
   )
 }

@@ -13,11 +13,11 @@ module.exports.addSubCategory = async (req, res) => {
 module.exports.viewSubCat = async (req, res) => {
   // let data = await subCatSchema.find({}).populate("categoryId");
   let data = await subCatSchema.find({}).populate({
-    path: "categoryId".populate({
-      path: "".populate({
-        path: "",
-      }),
+    path: "subCategoryId".populate({
+      path: "categoryId"
     }),
   });
   data && res.render("viewSubCat", { data });
 };
+
+

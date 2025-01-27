@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth, db } from "../../firebaseconfig";
+import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth, db, provider } from "../../firebaseconfig";
 import { Link, useNavigate } from "react-router-dom";
 import { doc, setDoc } from "firebase/firestore";
 
@@ -25,6 +25,12 @@ export default function SignUp() {
         navigate("/dashboard");
       }
     );
+  };
+
+  const handleGoogleSignIn = async () => {
+    await signInWithPopup(auth, provider).then((data) => {
+      console.log(data);
+    });
   };
 
   return (
@@ -59,6 +65,8 @@ export default function SignUp() {
       <span>
         <Link to={"/login"}>LogIn ?</Link>
       </span>
+
+      <button onClick={handleGoogleSignIn}>Sign in with Google</button>
     </div>
   );
 }

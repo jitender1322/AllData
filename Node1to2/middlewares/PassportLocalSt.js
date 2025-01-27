@@ -11,8 +11,7 @@ passport.use(
       if (user.password == password) {
         return done(null, user);
       } else {
-        return done(null, false);
-      }
+        return done(null, false);}
     } else {
       return done(null, false);
     }
@@ -38,7 +37,7 @@ passport.checkAuth = (req, res, next) => {
   } else {
     res.redirect("/");
   }
-};
+}; 
 
 passport.AuthenticatedUser = (req, res, next) => {
   if (req.isAuthenticated()) {

@@ -79,7 +79,7 @@ module.exports.checkPass2 = async (req, res) => {
         password: req.body.newPass,
       });
       res.redirect("/");
-    } else {
+    } else {  
       res.redirect("/");
     }
   } else {

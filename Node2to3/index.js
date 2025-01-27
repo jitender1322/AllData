@@ -3,18 +3,34 @@ const port = 1008;
 
 const app = express();
 const path = require("path");
+const db = require("./config/db");
+const cookies = require("cookie-parser");
+const passport = require("./middleware/passport");
+const session = require("express-session");
+const flash = require("connect-flash");
+const flashConnect = require("./middleware/flashConnect");
 
+app.use(express.urlencoded());
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
-// app.use("/", express.static(path.join(__dirname, "public")));
+app.use(cookies());
+app.use(
+  session({
+    name: "local",
+    secret: "rnw",
+    resave: true,
+    saveUninitialized: false,
+    cookie: { maxAge: 100 * 100 * 60 },
+  })
+);
 
-app.get("/", (req, res) => {
-  res.render("index");
-});
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(passport.AuthenticatedUser);
+app.use(flash());
+app.use(flashConnect.setFlash);
 
-app.get("/edit", (req, res) => {
-  res.render("edit");
-});
+app.use("/", require("./routes/route"));
 
 app.listen(port, (err) => {
   err ? console.log(err) : console.log("server started on port " + port);
