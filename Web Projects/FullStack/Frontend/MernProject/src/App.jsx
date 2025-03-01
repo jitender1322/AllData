@@ -34,7 +34,7 @@ export default function App() {
     axios.delete(`http://localhost:1080/api/deleteUser?id=${id}`)
       .then((res) => {
         console.log(res);
-        // setUsers(res.data)
+        setUsers(res.data)
       })
   }
   return (

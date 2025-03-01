@@ -6,7 +6,6 @@ const cookies = require("cookie-parser");
 
 const app = express();
 const db = require("./config/db");
-const passportSt = require("./middleware/passport");
 const passport = require("passport");
 const session = require("express-session");
 const flash = require("connect-flash");

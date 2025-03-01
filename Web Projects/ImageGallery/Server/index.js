@@ -23,7 +23,7 @@ app.use(express.urlencoded());
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 
-app.use(cors({ origin: "http://localhost:5173" }))
+app.use(cors({ origin:"http://localhost:5175"}))
 
 app.get("/", async (req, res) => {
     let data = await admin.find({});
@@ -31,12 +31,14 @@ app.get("/", async (req, res) => {
 })
 
 app.post("/addImage", upload, async (req, res) => {
-    if (!req.file) {
-        res.json("Image not found")
-    }
-    let image = req.file.path.replace(/\\/g, "/")
-    let data = await admin.create({ image })
-    data && res.json("data added")
+    console.log(req.file);
+    
+    // if (!req.file) {
+    //     res.json("Image not found")
+    // }
+    // let image = req.file.path.replace(/\\/g, "/")
+    // let data = await admin.create({ image })
+    // data && res.json("data added")
 })
 
 app.listen(port, (err) => {

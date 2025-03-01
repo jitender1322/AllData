@@ -27,7 +27,7 @@ passport.deserializeUser(async (userId, done) => {
   let user = await adminSchema.findById(userId);
   done(null, user);
 });
-
+  
 passport.checkAuth = (req, res, next) => {
   if (req.isAuthenticated()) {
     next();

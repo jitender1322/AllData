@@ -5,7 +5,7 @@ export default function ComTwo() {
     return (
         <div>
             <h1>ComTwo</h1>
-            <ComThree />
+            <ComThree  />
         </div>
     )
 }

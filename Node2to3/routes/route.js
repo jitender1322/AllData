@@ -20,5 +20,7 @@ route.get("/profile", passport.checkAuth, ctl.profile);
 route.get("/changePass",passport.checkAuth,ctl.changePass)
 route.post("/changePass",passport.checkAuth,ctl.changePassword)
 
+route.post("/recoverPass",ctl.recoverPass)
+route.post("/verifyPass", ctl.verifyPass);
 
 module.exports = route;

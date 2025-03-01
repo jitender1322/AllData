@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Crud</h1>
+    <form onsubmit="addData(event)">
+      <input type="text" placeholder="Enter your name : " id="name" />
+      <input type="text" placeholder="Enter your subject : " id="subject" />
+      <button id="subBtn" type="submit">Submit</button>
+    </form>
+    <table border="1" width="70%">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Subject</th>
+          <th colspan="2">Action</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+
+    <script>
+      let name = document.getElementById("name");
+      let subject = document.getElementById("subject");
+      let editId = null;
+      let subBtn = document.getElementById("subBtn");
+
+      function addData(event) {
+        event.preventDefault();
+        let existingData = JSON.parse(localStorage.getItem("students")) || [];
+
+        if (editId == null) {
+          let obj = {
+            id: Date.now(),
+            name: name.value,
+            subject: subject.value
+          };
+          existingData.push(obj);
+        } else {
+          existingData = existingData.map((e,i)=>{ 
+            if(e.id == editId){
+              e.name = name.value
+              e.subject = subject.value
+            }
+            return e
+          })
+        }
+
+        localStorage.setItem("students", JSON.stringify(existingData));
+        name.value = "";
+        subject.value = "";
+        editId = null
+
+        subBtn.innerText = "Submit"
+        getData();
+      }
+
+      function getData() {
+        let tbody = document.getElementById("tbody");
+
+        tbody.innerHTML = "";
+
+        let allData = JSON.parse(localStorage.getItem("students"));
+
+        for (let i = 0; i < allData.length; i++) {
+          let row = tbody.insertRow();
+          let cell0 = row.insertCell(0);
+          let cell1 = row.insertCell(1);
+          let cell2 = row.insertCell(2);
+          let cell3 = row.insertCell(3);
+          let cell4 = row.insertCell(4);
+
+          cell0.innerText = allData[i].id;
+          cell1.innerText = allData[i].name;
+          cell2.innerText = allData[i].subject;
+
+          cell3.innerHTML = `<button class="editBtn" data-id="${allData[i].id}" >Edit</button>`;
+          cell4.innerHTML = `<button class="deleteBtn" data-id="${allData[i].id}" >Delete</button>`;
+        }
+
+        let deleteBtns = document.querySelectorAll(".deleteBtn");
+        deleteBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            let dataId = btn.getAttribute("data-id");
+
+            let allData = JSON.parse(localStorage.getItem("students"));
+
+            let remainingData = allData.filter((item) => item.id != dataId);
+
+            localStorage.setItem("students", JSON.stringify(remainingData));
+
+            getData();
+          });
+        });
+
+        let editBtns = document.querySelectorAll(".editBtn");
+        editBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            let dataId = btn.getAttribute("data-id");
+
+            let allData = JSON.parse(localStorage.getItem("students"));
+
+            let singleData = allData.find((item) => item.id == dataId);
+
+            name.value = singleData.name;
+            subject.value = singleData.subject;
+            editId = singleData.id;
+
+            subBtn.innerText = "Update";
+          });
+        });
+      }
+      getData();
+    </script>
+  </body>
+</html>

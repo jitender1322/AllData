@@ -9,7 +9,7 @@ export default function ComOne() {
         <div>
             <h1>ComOne</h1>
             <myContext.Provider value={count} >
-                <ComTwo />
+                <ComTwo  />
             </myContext.Provider>
         </div>
     )

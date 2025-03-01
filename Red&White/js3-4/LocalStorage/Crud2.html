@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form onsubmit="addData(event)">
+      <input type="text" id="name" />
+      <input type="text" id="subject" />
+      <input type="submit" />
+    </form>
+    <table border="1" width="60%">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Subject</th>
+          <th colspan="2">Action</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+
+    <script>
+      let name = document.getElementById("name");
+      let subject = document.getElementById("subject");
+
+      function addData(event) {
+        event.preventDefault();
+
+        let existingData = JSON.parse(localStorage.getItem("students")) || [];
+
+        let obj = { id: Date.now(), name: name.value, subject: subject.value };
+
+        existingData.push(obj);
+
+        localStorage.setItem("students", JSON.stringify(existingData));
+
+        name.value = "";
+        subject.value = "";
+
+        getData();
+      }
+
+      function getData() {
+        let tbody = document.getElementById("tbody");
+        tbody.innerHTML = "";
+
+        let allData = JSON.parse(localStorage.getItem("students"));
+
+        for (let i = 0; i < allData.length; i++) {
+          let row = tbody.insertRow();
+          let cell0 = row.insertCell(0);
+          let cell1 = row.insertCell(1);
+          let cell2 = row.insertCell(2);
+          let cell3 = row.insertCell(3);
+          let cell4 = row.insertCell(4);
+
+          cell0.innerText = allData[i].id;
+          cell1.innerText = allData[i].name;
+          cell2.innerText = allData[i].subject;
+
+          cell3.innerHTML = `<button class="deleteBtn" data-id="${allData[i].id}" >Delete</button>`;
+          cell4.innerHTML = `<button class="editBtn" data-id="${allData[i].id}" >Edit</button>`;
+        }
+
+        let DeleteBtns = document.querySelectorAll(".deleteBtn");
+
+        DeleteBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            let allData = JSON.parse(localStorage.getItem("students")) || [];
+            let btnId = btn.getAttribute("data-id");
+
+            let remainingData = allData.filter((data) => data.id != btnId);
+
+            localStorage.setItem("students", JSON.stringify(remainingData));
+
+            getData();
+          });
+        });
+      }
+
+      getData();
+    </script>
+  </body>
+</html>
