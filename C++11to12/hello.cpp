@@ -1,25 +1,22 @@
 #include <iostream>
 using namespace std;
 
-#define MAX 45;
-
 int main(){
-    // int a = 324;
-    // float b =13.6;
-    // const char c = 'd';
+       int num;
 
-    // int aa ; //decalre
-    // aa =10; // initialize
+       cout << "Enter a digit : ";
+       cin >> num;
 
-    // cout << 35;
+       int lastDigit = num % 10;
+       int firstDigit;
 
-    // int a;
+       while(num >= 10){
+        num = num / 10;
+        firstDigit = num;
+       }
 
-    // cout << "Enter a number : ";
+       int sum = lastDigit + firstDigit;
 
-    // cin >> a;
-
-    // cout << a << endl;
-    // cout << a;
-
+       cout << "sum of first and last digit " << sum ;
+      
 }

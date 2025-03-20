@@ -1,28 +1,28 @@
 const mongoose = require("mongoose");
 
 const schema = mongoose.Schema({
-  name: {
+  fname: {
     type: String,
-    requried: true,
+    required: true,
   },
-  city: {
+  lname: {
     type: String,
-    requried: true,
+    required: true,
   },
   gender: {
     type: String,
-    requried: true,
+    required: true,
   },
   email: {
     type: String,
-    requried: true,
+    required: true,
   },
   password: {
     type: String,
-    requried: true,
-  }
+    required: true,
+  },
 });
 
-const firstSchema = mongoose.model("NodeApi", schema);
+const firstSchema = mongoose.model("admin", schema);
 
 module.exports = firstSchema;

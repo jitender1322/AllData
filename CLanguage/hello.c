@@ -1,44 +1,26 @@
 #include <stdio.h>
 #include <string.h>
 
-// union student
-// {
-//    int id;
-//    char name[100];
-//    int age;
-// } s1, s2;
-
-enum
+int main()
 {
-   one=5,
-   two,
-   three,
-   four
-};
+   FILE *p = fopen("demo.txt", "a");
 
-int
-main()
-{
+   char s[1000];
 
-   printf("%d",four);
-   // struct student s1;
-   // struct student s2;
+   strcpy(s, "this is Append mode!");
 
-   // s1.id = 1;
-   // strcpy(s1.name, "Ramesh");
-   // s1.age = 23;
+   if (p == NULL)
+   {
+      printf("File could not open");
+   }
+   else
+   {
+      printf("file lodded successfully ! \n");
+      fputs("\n", p);
+      // fgets(s, 50, p);
+      fputs(s, p);
+      fclose(p);
+   }
 
-   // s2.id = 2;
-   // strcpy(s2.name, "Suresh");
-   // s2.age = 27;
-
-   // printf("%u", sizeof(s1));
-
-   // printf("%d ", s1.id);
-   // printf("%s ", s1.name);
-   // printf("%d \n\n\n", s1.age);
-
-   // printf("%d %s %d ", s2.id, s2.name, s2.age);
-   // printf("%s ",s2.name);
-   // printf("%d ",s2.age);
+   // printf("%s",s);
 }

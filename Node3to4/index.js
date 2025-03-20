@@ -34,6 +34,7 @@ app.use("/uploads",express.static(path.join(__dirname, "uploads")));
 
 app.use("/", require("./routes/route"));
 app.use("/category", require("./routes/category"));
+app.use("/subCategory", require("./routes/subCategory")); 
 
 app.listen(port, (err) => {
   err ? console.log(err) : console.log("server started on port : " + port);

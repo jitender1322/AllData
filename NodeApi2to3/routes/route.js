@@ -1,10 +1,8 @@
 const express = require("express");
-const route = express.Router()
-const ctl = require("../controllers/ctl")
-const auth = require("../middlewares/jwtAuth")
+const route = express.Router();
+const ctl = require("../controllers/ctl");
 
-route.post("/register",ctl.register)
-route.post("/login",ctl.login)
-route.get("/viewAdmin",auth,ctl.viewAdmin)
+route.post("/registerAdmin", ctl.registerAdmin);
+route.post("/logInAdmin",ctl.logInAdmin)
 
-module.exports = route
+module.exports = route;

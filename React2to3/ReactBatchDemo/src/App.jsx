@@ -9,14 +9,7 @@ import Crud from "./Components/LocalStorage/Crud";
 export default function App() {
   return (
     <div>
-      {/* <BrowserRouter>
-      <Routes>
-        <Route path='/' Component={Signup} ></Route>
-        <Route path='/signin' Component={Signin} ></Route>
-        <Route path='/dashboard' Component={Dashboard} ></Route>
-      </Routes>
-      </BrowserRouter> */}
-      <Crud />
+      <Signup/>
     </div>
   );
 }

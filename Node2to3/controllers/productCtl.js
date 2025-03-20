@@ -19,7 +19,10 @@ module.exports.viewProduct = async (req, res) => {
     .populate({
       path: "subCategoryId",
       populate : {
-        path : "categoryId"
+        path : "categoryId",
+        populate :{
+          path : ""
+        }
       }
     })
     .then((data) => {
