@@ -1,17 +1,20 @@
-const http = require("http");
-const port = 1008;
+const express = require("express")
+const port = 1008
 
-const portHandler = (req,res)=>{
-    res.write("<h1>Server started on port 1008</h1>")
-    res.end()
-}
+const app = express()
+const db = require("./config/db")
+const path = require("path")
+const cookie = require("cookie-parser")
 
-const server = http.createServer(portHandler);
+app.set("view engine","ejs");
+app.use(express.urlencoded({extended :true}))
+app.use("/uploads",express.static(path.join(__dirname,"uploads")))
+app.use("/",express.static(path.join(__dirname,"public")))
+app.use(cookie())
 
-server.listen(port, (err) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log("server started on port : " + port);
-  }
-});
+app.use("/",require("./routes/route"))
+
+
+app.listen(port,(err)=>{
+    err ? console.log(err) : console.log("server started on port : " + port);    
+})

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instagram Style Login</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #fafafa;
+    }
+
+    .container {
+      display: flex;
+      max-width: 900px;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .left {
+      flex: 1;
+      background: url('mobileImage.jpg') no-repeat ;
+      background-size: cover;
+      display: none; /* Hide on small screens */
+    }
+
+    .right {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-box {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .logo {
+      width: 175px;
+      margin: 0 auto 30px;
+      display: block;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #dbdbdb;
+      border-radius: 5px;
+      background-color: #fafafa;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #0095f6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .signup-text {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .signup-text a {
+      color: #0095f6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media (min-width: 768px) {
+      .left {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 📱 Left Section - Mobile Image Mock -->
+    <div class="left"></div>
+
+    <!-- 🔐 Right Section - Login Form -->
+    <div class="right">
+      <div class="login-box">
+        <!-- Instagram Logo -->
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2560px-Instagram_logo.svg.png" alt="Instagram Logo">
+
+        <!-- Login Form -->
+        <input type="text" placeholder="Phone number, username, or email" />
+        <input type="password" placeholder="Password" />
+        <button>Log In</button>
+
+        <!-- Signup Link -->
+        <div class="signup-text">
+          Don't have an account? <a href="#">Sign up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
