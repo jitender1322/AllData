@@ -3,39 +3,83 @@ using namespace std;
 #include <string.h>
 #include <vector>
 
-
 int main()
 {
+  vector<int> Arr{20, 30, 40};
 
-  // vector <int> Arr;
-  // vector <int> Arrr(5,2);
+  int choice;
 
-  // g++ -std=c++11 file.cpp 
-  // vector <int> Arrrr{12,23,12,54,23,54};
+  do
+  {
+    cout << "Welcome to Array Program !" << endl
+         << endl;
 
-  // Arrrr.push_back(33);
-  // Arrrr.pop_back();
-  // Arrrr.insert(Arrrr.begin()+2,66);
-  // Arrrr.erase(Arrrr.begin()+2);
+    cout << "Press 1 To ADD An Element In Array : " << endl;
+    cout << "Press 2 To Print All Element Of Array : " << endl;
+    cout << "Press 3 To Delete Element Of Array : " << endl;
+    cout << "Press 4 To Update Element Of Array : " << endl;
+    cout << "Press 0 To Exit The Program : " << endl;
 
+    cin >> choice;
 
-  // cout << Arr.empty() << endl;
-  // cout << Arrrr.at(1) << endl;
+    if (choice == 1)
+    {
+      int element;
+      cout << "Enter the element : ";
+      cin >> element;
 
-  int n;
-  cout << "Enter value : ";
-  cin >> n;
-
-
-  vector <int> v1(n,n);
-  vector <vector<int>> v2(n,v1);
-
-  for(vector<int> elem : v2){
-    for(int e:elem){
-      cout << e << " ";
+      Arr.push_back(element);
+      cout << "Element Added Succesfully !" << endl
+           << endl;
     }
-    cout <<endl;
-  }
-  
+    else if (choice == 2)
+    {
+      if (Arr.size() == 0)
+      {
+        cout << "array is empty !" << endl;
+      }
+      else
+      {
+        cout << "Here is the list of elements : " << endl;
+        for (int a : Arr)
+        {
+          cout << a << endl;
+        }
+      }
+      cout << endl
+           << endl;
+    }
+
+    else if (choice == 3)
+    {
+      int index;
+
+      cout << "Enter the index to remove the element : ";
+      cin >> index;
+
+      if (index < Arr.size())
+      {
+        Arr.erase(Arr.begin() + index);
+        cout << "Element deleted successfully !" << endl;
+      }
+      else
+      {
+        cout << "Your index is not valid ! " << endl;
+      }
+    }
+    else if (choice == 4)
+    {
+      int index, value;
+      cout << "Enter the index : " << endl;
+      cin >> index;
+      cout << "Enter the value : " << endl;
+      cin >> value;
+
+      Arr[index] = value;
+      cout << "Element updated successfully !" << endl;
+    }
+
+  } while (choice > 0);
+
   return 0;
 }

@@ -8,7 +8,7 @@ route.post(
   "/login",
   passport.authenticate("local", { failureRedirect: "/" }),
   ctl.adminLogin
-);
+);7 
 route.get("/logout", ctl.logout);
 route.get("/dashboard",passport.checkAuth ,ctl.dashboard);
 route.get("/addAdmin", passport.checkAuth, ctl.addAdmin);

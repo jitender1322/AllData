@@ -18,7 +18,7 @@ app.use(
     secret: "rnw",
     resave: true,
     saveUninitialized: false,
-    cookie: { maxAge: 100 * 100 * 60 },
+    cookie: { maxAge: 100 * 100 * 60,httpOnly:true},
   })
 );
 

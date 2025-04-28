@@ -1,17 +1,22 @@
 const express = require("express");
 const route = express.Router();
-const ctl = require("../controllers/ctl")
+const ctl = require("../controllers/ctl");
+const passport = require("../middleware/localSt");
 
-route.get("/",ctl.login)
-route.post("/login",ctl.loginData)
+route.get("/", ctl.login);
+route.post(
+  "/login",
+  passport.authenticate("localSt", { failureRedirect: "/" }),
+  ctl.loginData
+);
 
-route.get("/dashboard", ctl.dashboard);
+route.get("/dashboard",passport.checkAuth ,ctl.dashboard);
 
-route.get("/addAdmin",ctl.addAdmin)
-route.post("/addAdmin",ctl.addAdminData)
+route.get("/addAdmin", passport.checkAuth,ctl.addAdmin);
+route.post("/addAdmin", passport.checkAuth, ctl.addAdminData);
 
-route.get("/viewAdmin",ctl.viewAdmin)
+route.get("/viewAdmin", passport.checkAuth, ctl.viewAdmin);
 
-route.get("/deleteAdmin",ctl.deleteAdmin)
+route.get("/deleteAdmin", passport.checkAuth, ctl.deleteAdmin);
 
 module.exports = route;
