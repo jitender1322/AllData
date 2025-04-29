@@ -1,22 +1,44 @@
-let name = document.getElementById("name");
+let fname = document.getElementById("name");
 let subject = document.getElementById("subject");
 let age = document.getElementById("age");
 let btn = document.getElementById("btn");
 let list = document.getElementById("list");
 
-btn.addEventListener("click", () => {
-  let obj = {
-    id: Date.now(),
-    name: name.value,
-    subject: subject.value,
-    age: age.value,
-  };
-  let oldRecord = JSON.parse(localStorage.getItem("Students")) || [];
-  localStorage.setItem("Students", JSON.stringify([...oldRecord, obj]));
+let editIndex = null;
 
-  name.value = "";
+btn.addEventListener("click", () => {
+  let oldRecord = JSON.parse(localStorage.getItem("Students")) || [];
+  if (editIndex == null) {
+    let obj = {
+      id: Date.now(),
+      fname: fname.value,
+      subject: subject.value,
+      age: age.value,
+    };
+    oldRecord = [...oldRecord, obj];
+  } else {
+    oldRecord.forEach((item)=>{
+      if(item.id == editIndex){
+        item.fname = fname.value
+        item.subject = subject.value
+        item.age = age.value
+      }else{
+        item
+      }
+    })
+
+    // let singleData = oldRecord.find((item) => item.id == editIndex);
+    // singleData.fname = fname.value;
+    // singleData.subject = subject.value;
+    // singleData.age = age.value;
+  }
+  localStorage.setItem("Students", JSON.stringify(oldRecord));
+
+  fname.value = "";
   subject.value = "";
   age.value = "";
+  editIndex = null;
+  btn.innerHTML = "Add Data";
 
   getData();
 });
@@ -37,7 +59,7 @@ function getData() {
     edit.setAttribute("data-id", item.id);
 
     li1.innerText = index + 1;
-    li2.innerText = item.name;
+    li2.innerText = item.fname;
     li3.innerText = item.subject;
     li4.innerText = item.age;
     del.innerHTML = "Delete";
@@ -60,10 +82,26 @@ function getData() {
       let allData = JSON.parse(localStorage.getItem("Students"));
       let btnId = btn.getAttribute("data-id");
 
-      let newRecord = allData.filter((item)=>item.id != btnId);
+      let newRecord = allData.filter((item) => item.id != btnId);
 
-      localStorage.setItem("Students",JSON.stringify(newRecord))
-      getData()
+      localStorage.setItem("Students", JSON.stringify(newRecord));
+      getData();
+    });
+  });
+
+  let editBtns = document.querySelectorAll(".edit-btn");
+
+  editBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      let allData = JSON.parse(localStorage.getItem("Students"));
+      let btnId = btn.getAttribute("data-id");
+
+      let singleData = allData.find((item) => item.id == btnId);
+      fname.value = singleData.fname;
+      subject.value = singleData.subject;
+      age.value = singleData.age;
+      document.getElementById("btn").innerHTML = "Update Data";
+      editIndex = btnId;     
     });
   });
 }
