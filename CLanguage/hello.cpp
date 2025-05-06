@@ -13,19 +13,19 @@ int
 main()
 {
     Node *head = NULL;
-    head = new Node();
 
-    head->data = 25;
+    head = new Node();
+    head->data=25;
     head->next = NULL;
 
-    
-    Node *head2 = NULL;
-    head2 = new Node();
-    
-    head2->data = 50;
-    head2->next = NULL;
-    
-    head->next = head2;    
-    
-    cout << head->next;
+    Node *current = NULL;
+    current->data=25;
+    current->next=NULL;
+    head->next= current;
+
+    current = new Node();
+    current->data = 49;
+    current->next=NULL;
+
+    head->next->next = current;
 }

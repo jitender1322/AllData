@@ -3,83 +3,40 @@ using namespace std;
 #include <string.h>
 #include <vector>
 
+class Node
+{
+public:
+  int data;
+  Node *next;
+};
+
 int main()
 {
-  vector<int> Arr{20, 30, 40};
 
-  int choice;
+  Node *n1 = NULL;
 
-  do
-  {
-    cout << "Welcome to Array Program !" << endl
-         << endl;
+  n1 = new Node();
+  n1->data = 25;
+  n1->next = NULL;
 
-    cout << "Press 1 To ADD An Element In Array : " << endl;
-    cout << "Press 2 To Print All Element Of Array : " << endl;
-    cout << "Press 3 To Delete Element Of Array : " << endl;
-    cout << "Press 4 To Update Element Of Array : " << endl;
-    cout << "Press 0 To Exit The Program : " << endl;
+  Node *n2 = NULL;
 
-    cin >> choice;
+  n2 = new Node();
+  n2->data = 45;
+  n2->next = NULL;
 
-    if (choice == 1)
-    {
-      int element;
-      cout << "Enter the element : ";
-      cin >> element;
+  n1->next = n2;
 
-      Arr.push_back(element);
-      cout << "Element Added Succesfully !" << endl
-           << endl;
-    }
-    else if (choice == 2)
-    {
-      if (Arr.size() == 0)
-      {
-        cout << "array is empty !" << endl;
-      }
-      else
-      {
-        cout << "Here is the list of elements : " << endl;
-        for (int a : Arr)
-        {
-          cout << a << endl;
-        }
-      }
-      cout << endl
-           << endl;
-    }
+  Node *n3 = NULL;
 
-    else if (choice == 3)
-    {
-      int index;
+  n3 = new Node();
+  n3->data = 78;
+  n3->next = NULL;
 
-      cout << "Enter the index to remove the element : ";
-      cin >> index;
+  n2->next = n3;
 
-      if (index < Arr.size())
-      {
-        Arr.erase(Arr.begin() + index);
-        cout << "Element deleted successfully !" << endl;
-      }
-      else
-      {
-        cout << "Your index is not valid ! " << endl;
-      }
-    }
-    else if (choice == 4)
-    {
-      int index, value;
-      cout << "Enter the index : " << endl;
-      cin >> index;
-      cout << "Enter the value : " << endl;
-      cin >> value;
-
-      Arr[index] = value;
-      cout << "Element updated successfully !" << endl;
-    }
-
-  } while (choice > 0);
+  cout << n1->data << "  " << n1->next << endl;
+  cout << n2->data << "  " << n2->next << endl;
 
   return 0;
 }

@@ -9,13 +9,22 @@ let editIndex = null;
 btn.addEventListener("click", () => {
   let oldRecord = JSON.parse(localStorage.getItem("Students")) || [];
   if (editIndex == null) {
-    let obj = {
-      id: Date.now(),
-      fname: fname.value,
-      subject: subject.value,
-      age: age.value,
-    };
-    oldRecord = [...oldRecord, obj];
+    // let obj = {
+    //   id: Date.now(),
+    //   fname: fname.value,
+    //   subject: subject.value,
+    //   age: age.value,
+    // };
+    oldRecord = [
+      ...oldRecord,
+      {
+        id: Date.now(),
+        fname: fname.value,
+        subject: subject.value,
+        age: age.value,
+      },
+    ];
+    // oldRecord.push()
   } else {
     oldRecord.forEach((item)=>{
       if(item.id == editIndex){
@@ -34,9 +43,9 @@ btn.addEventListener("click", () => {
   }
   localStorage.setItem("Students", JSON.stringify(oldRecord));
 
-  fname.value = "";
-  subject.value = "";
-  age.value = "";
+    fname.value = "";
+    subject.value = "";
+    age.value = "";
   editIndex = null;
   btn.innerHTML = "Add Data";
 

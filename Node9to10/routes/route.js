@@ -10,6 +10,8 @@ route.post(
   ctl.loginData
 );
 
+route.get("/logout",ctl.logout)
+
 route.get("/dashboard",passport.checkAuth ,ctl.dashboard);
 
 route.get("/addAdmin", passport.checkAuth,ctl.addAdmin);
@@ -18,5 +20,10 @@ route.post("/addAdmin", passport.checkAuth, ctl.addAdminData);
 route.get("/viewAdmin", passport.checkAuth, ctl.viewAdmin);
 
 route.get("/deleteAdmin", passport.checkAuth, ctl.deleteAdmin);
+
+route.get("/profile",passport.checkAuth,ctl.profile)
+
+route.get("/changePassword",passport.checkAuth,ctl.changePassword)
+route.post("/changePass", passport.checkAuth, ctl.changePass);
 
 module.exports = route;
