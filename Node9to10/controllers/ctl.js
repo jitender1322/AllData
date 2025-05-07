@@ -1,4 +1,5 @@
 let schema = require("../model/firstSchema");
+let mailer = require("../middleware/nodemailer")
 
 module.exports.login = async (req, res) => {
   res.render("login");
@@ -69,3 +70,17 @@ module.exports.changePass = async (req, res) => {
     res.redirect("/changePassword")
   }
 };
+
+module.exports.lostPass = async (req,res)=>{
+  let admin = await schema.findOne({email : req.body.email});
+  if(!admin){
+    return res.redirect("/")
+  }
+  let otp = Math.floor(Math.random()*100000 + 900000);
+  mailer.sendMail(req.body.email,otp);
+  res.render("forgetPass")
+}
+
+module.exports.forgetPass = (req,res)=>{
+  
+}
