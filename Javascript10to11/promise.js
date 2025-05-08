@@ -1,22 +1,15 @@
-let myPromise = new Promise((res,rej)=>{
-// api call
-}).then(()=>{
-    //log
-}).then(()=>{
+// API => Application Programming Interface
 
-}).then(()=>{
+// http://localhost:3000/ ->API
+// http://localhost:3000/Product ->API's Endpoint
 
-}).catch((err)=>{
+// REST Api, GraphQL, XML
 
-})
-
-//exception handling
-
-try{
+// REST -> Representational State Transfer Protocol
+// Architecture
 
 
+// AJAX -> Older version to handle api's
+// Fetch -> Modern way to handle api's
 
-}catch(err){
-
-}
-
+// GET,Post,Put,DELETE

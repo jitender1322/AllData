@@ -7,36 +7,42 @@ class Node
 {
 public:
   int data;
-  Node *next;
+  Node *link;
 };
 
 int main()
 {
 
-  Node *n1 = NULL;
+  Node *head = NULL;
 
-  n1 = new Node();
-  n1->data = 25;
-  n1->next = NULL;
+  head = new Node();
+  head->data = 25;
+  head->link = NULL;
+  
+  Node *current = NULL;
 
-  Node *n2 = NULL;
+  current = new Node();
+  current->data = 45;
+  current->link = NULL;
 
-  n2 = new Node();
-  n2->data = 45;
-  n2->next = NULL;
+  head->link= current;
 
-  n1->next = n2;
+  current = new Node();
+  current->data=98;
+  current->link=NULL;
 
-  Node *n3 = NULL;
+  head->link->link = current;
 
-  n3 = new Node();
-  n3->data = 78;
-  n3->next = NULL;
+  Node *ptr =NULL;
 
-  n2->next = n3;
+  ptr = head;
 
-  cout << n1->data << "  " << n1->next << endl;
-  cout << n2->data << "  " << n2->next << endl;
+  while (ptr!=NULL)
+  {
+    cout << ptr->data<<endl;
+    ptr = ptr->link;
+  }
+  
 
   return 0;
 }

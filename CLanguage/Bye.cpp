@@ -1,45 +1,43 @@
 #include <iostream>
 using namespace std;
-
 #include <string.h>
 
+class Node{
+    public:
+        int data;
+        Node *next;
 
-class student{
-   public: 
-    char name[50];
-    int rollNo;
-    static char course[50];
-
-        setData(){
-                cout << "Enter student roll no. : ";
-                cin >> this->rollNo;
-                cout << "Enter student name : ";
-                cin >> this->name;
-            };
-
-        getData(){
-             cout << this->rollNo << endl;
-             cout << this->name << endl;
-             cout << this->course << endl;
-        }
+    Node(int data){
+        this->data = data;
+        this->next=NULL;
+    }
 };
 
-char student::course[50];
+class LinkedList{
+    public:
+        Node *head;
+        int count;
+    
+    LinkedList(){
+        this->head=NULL;
+        this->count=0;
+    }
+
+    void insertElement(int element){
+        Node *newNode = new Node(element);
+        newNode->next=this->head;
+        this->head= newNode;
+        this->count++;
+        cout << "Element inserted successfully!";
+    }
+};
 
 
 int main(){
-    strcpy(student::course,"Fullstack");
 
-    cout << "enter number of student : ";
-    int num;
-    cin >> num;
+    LinkedList link;
 
-    student one[num];
+    link.insertElement(25);
 
-   for(int i=0;i<num;i++){
-        one[i].setData();
-    }
-    for(int i=0;i<num;i++){
-        one[i].getData();
-    }  
+    return 0;
 }

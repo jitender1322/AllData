@@ -77,10 +77,24 @@ module.exports.lostPass = async (req,res)=>{
     return res.redirect("/")
   }
   let otp = Math.floor(Math.random()*100000 + 900000);
+  req.session.otp = otp;
+  req.session.adminData = admin;
   mailer.sendMail(req.body.email,otp);
   res.render("forgetPass")
 }
 
-module.exports.forgetPass = (req,res)=>{
-  
+module.exports.forgetPass = async (req,res)=>{
+  let otp = req.session.otp;
+  let admin = req.session.adminData;
+  if(req.body.otp == otp){
+     if(req.body.newPass == req.body.confirmPass){
+        await schema.findByIdAndUpdate(admin.id,{password : req.body.confirmPass}).then(()=>{
+          res.redirect("/")
+        })
+      }else{
+        res.redirect("/changePassword");
+      }
+  }else{
+    res.redirect("/")
+  }
 }

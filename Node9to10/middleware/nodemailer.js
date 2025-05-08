@@ -17,5 +17,5 @@ module.exports.sendMail = (to,otp)=>{
     };
 
     transport.sendMail(mailOptions);
-    console.log("email sended successfully !");
+    console.log("email sended successfully !"); 
 }

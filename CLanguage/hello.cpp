@@ -7,25 +7,102 @@ class Node
 public:
     int data;
     Node *next;
+
+    Node(int data){
+        this->data=data;
+        this->next=NULL;
+    }
 };
 
-int
-main()
+class LinkedList
 {
-    Node *head = NULL;
+public:
+    Node *head;
+    int count,element;
 
-    head = new Node();
-    head->data=25;
-    head->next = NULL;
+    LinkedList()
+    {
+        this->head = NULL;
+        this->count = 0;
+    }
 
-    Node *current = NULL;
-    current->data=25;
-    current->next=NULL;
-    head->next= current;
+    void insertAtBeginning(int data) {
+        Node *newNode = new Node(data);
+        newNode->next=this->head;
+        this->head= newNode;
+        this->count++;
+    };
+    void insertAtEnding(int data) {
+        Node *newNode = new Node(data);
+        if(this->head==NULL){
+            this->head=newNode;
+        }else{
+            Node *ptr = this->head;
+            while (ptr->next!=NULL)
+            {
+                ptr = ptr->next;
+            }
+            ptr->next=newNode;
+            this->count++;
+        }
+    };
+    void insertAtPosition(int data,int position) {
+        Node *newNode = new Node(data);
+        if(position==0){
+            newNode->next = this->head;
+            this->head = newNode;
+        }else{
+            Node *ptr = this->head;
+            for(int i=0;i<position-1;i++){
+                ptr=ptr->next;
+            }
+            newNode->next=ptr->next;
+            ptr->next=newNode;
+            this->count++;
+        }
+    };
+};
 
-    current = new Node();
-    current->data = 49;
-    current->next=NULL;
+int main()
+{
+    LinkedList list;
 
-    head->next->next = current;
+    int choice,element,position;
+
+    do
+    {
+        cout << "Press 1 for adding a node in the beginning" << endl;
+        cout << "Press 2 for adding a node in the ending" << endl;
+        cout << "Press 3 for adding a node anywhere in the list" << endl;
+        cout << "Press 0 for exiting the program" << endl;
+
+        cout << "Enter a choice: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+        case 1:
+            cout << "Enter value of element : ";
+            cin >> element;
+            list.insertAtBeginning(element);
+            break;
+        case 2:
+            cout << "Enter value of element : ";
+            cin >> element;
+            list.insertAtEnding(element);
+            break;
+        case 3:
+            cout << "Enter value of element : ";
+            cin >> element;
+            cout << "Enter position for element : ";
+            cin >> position;
+            list.insertAtPosition(element,position);
+            break;
+        case 0 :
+            break;
+        default:
+            break;
+        }
+
+    } while (choice != 0);  
 }
