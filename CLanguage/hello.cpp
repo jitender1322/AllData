@@ -65,6 +65,26 @@ public:
         }
         cout << "Element inserted at given position successfully!" << endl;
     };
+
+    void getAllNode(){
+        Node *ptr = this->head;
+        while (ptr!=NULL)
+        {
+          cout << ptr->data << " <- ";
+          ptr = ptr->next;
+        }
+        cout << endl;
+    }
+
+    void updateNode(int data, int position)
+    {
+        Node *ptr = this->head;
+        for(int i=0;i<position-1;i++){
+            ptr = ptr->next;
+        }
+        ptr->data = data;
+        cout << "Node updated successfully !" << endl;
+    }
 };
 
 int main()
@@ -78,6 +98,9 @@ int main()
         cout << "Press 1 for adding a node in the beginning" << endl;
         cout << "Press 2 for adding a node in the ending" << endl;
         cout << "Press 3 for adding a node anywhere in the list" << endl;
+        cout << "Press 4 for getting all node in the list" << endl;
+        cout << "Press 5 for updating node in the list" << endl;
+
         cout << "Press 0 for exiting the program" << endl;
 
         cout << "Enter a choice: ";
@@ -102,6 +125,15 @@ int main()
             cin >> position;
             list.insertAtPosition(element,position);
             break;
+        case 4:
+            list.getAllNode();
+            break;
+        case 5:
+            cout << "Enter value of element : ";
+            cin >> element;
+            cout << "Enter position for element : ";
+            cin >> position;
+            list.updateNode(element,position);
         case 0 :
             break;
         default:
