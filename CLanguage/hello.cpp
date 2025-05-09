@@ -31,7 +31,9 @@ public:
         newNode->next=this->head;
         this->head= newNode;
         this->count++;
+        cout << "Data inserted successfully !";
     };
+
     void insertAtEnding(int data) {
         Node *newNode = new Node(data);
         if(this->head==NULL){
@@ -44,6 +46,7 @@ public:
             }
             ptr->next=newNode;
             this->count++;
+            cout << "Element inserted at end successfully!";
         }
     };
     void insertAtPosition(int data,int position) {
@@ -58,8 +61,9 @@ public:
             }
             newNode->next=ptr->next;
             ptr->next=newNode;
-            this->count++;
+            this->count++;   
         }
+        cout << "Element inserted at given position successfully!" << endl;
     };
 };
 
