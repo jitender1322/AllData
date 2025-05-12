@@ -90,6 +90,7 @@
                                   <thead>
                                     <tr>
                                       <th scope="col">#</th>
+                                      <th scope="col">Sub Category Name</th>
                                       <th scope="col">Category Name</th>
                                       <th scope="col">Category Image</th>
                                       <th scope="col" colspan="2">Actions</th>
@@ -99,6 +100,7 @@
                                    <%data.map((e,i)=>{%>
                                         <tr>
                                             <td><%=i+1%></td>
+                                            <td><%=e.subCatName%></td>
                                             <td><%=e.catName%></td>
                                             <td><img src="/<%=e.image%>" width="20%" alt=""></td>
                                             <td><a href="/editAdmin?id=<%=e.id%>"><button class="btn">Edit</button></a></td>

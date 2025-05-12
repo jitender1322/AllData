@@ -1,144 +1,166 @@
 #include <iostream>
 using namespace std;
-#include <string.h>
 
-class Node
+class Stack
 {
+private:
+    int *arr;
+    int capacity;
+    int top;
+    int count;
+
 public:
-    int data;
-    Node *next;
-
-    Node(int data){
-        this->data=data;
-        this->next=NULL;
-    }
-};
-
-class LinkedList
-{
-public:
-    Node *head;
-    int count,element;
-
-    LinkedList()
+    Stack(int capacity)
     {
-        this->head = NULL;
-        this->count = 0;
+        this->capacity = capacity;
+        arr = new int[capacity];
+        top = -1;
+        count = 0;
     }
 
-    void insertAtBeginning(int data) {
-        Node *newNode = new Node(data);
-        newNode->next=this->head;
-        this->head= newNode;
-        this->count++;
-        cout << "Data inserted successfully !";
-    };
+    ~Stack()
+    {
+        delete[] arr;
+    }
 
-    void insertAtEnding(int data) {
-        Node *newNode = new Node(data);
-        if(this->head==NULL){
-            this->head=newNode;
-        }else{
-            Node *ptr = this->head;
-            while (ptr->next!=NULL)
-            {
-                ptr = ptr->next;
-            }
-            ptr->next=newNode;
-            this->count++;
-            cout << "Element inserted at end successfully!";
-        }
-    };
-    void insertAtPosition(int data,int position) {
-        Node *newNode = new Node(data);
-        if(position==0){
-            newNode->next = this->head;
-            this->head = newNode;
-        }else{
-            Node *ptr = this->head;
-            for(int i=0;i<position-1;i++){
-                ptr=ptr->next;
-            }
-            newNode->next=ptr->next;
-            ptr->next=newNode;
-            this->count++;   
-        }
-        cout << "Element inserted at given position successfully!" << endl;
-    };
-
-    void getAllNode(){
-        Node *ptr = this->head;
-        while (ptr!=NULL)
+    void push(int element)
+    {
+        if (top == capacity - 1)
         {
-          cout << ptr->data << " <- ";
-          ptr = ptr->next;
+            cout << "Stack is overflowed!" << endl;
         }
-        cout << endl;
+        else
+        {
+            arr[++top] = element;
+            count++;
+            cout << "Element added!" << endl;
+        }
     }
 
-    void updateNode(int data, int position)
+    void pop()
     {
-        Node *ptr = this->head;
-        for(int i=0;i<position-1;i++){
-            ptr = ptr->next;
+        if (top == -1)
+        {
+            cout << "Stack is underflowed!" << endl;
         }
-        ptr->data = data;
-        cout << "Node updated successfully !" << endl;
+        else
+        {
+            top--;
+            count--;
+            cout << "Element popped!" << endl;
+        }
+    }
+
+    void peek()
+    {
+        if (top == -1)
+        {
+            cout << "Stack is empty!" << endl;
+        }
+        else
+        {
+            cout << "Top element: " << arr[top] << endl;
+        }
+    }
+
+    void display()
+    {
+        if (top == -1)
+        {
+            cout << "Stack is empty!" << endl;
+        }
+        else
+        {
+            cout << "Stack elements: ";
+            for (int i = top; i >= 0; i--)
+            {
+                cout << arr[i] << " ";
+            }
+            cout << endl;
+        }
+    }
+
+    void isEmpty()
+    {
+        if (top == -1)
+        {
+            cout << "Yes, Stack is empty!" << endl;
+        }
+        else
+        {
+            cout << "Nope, Stack has elements." << endl;
+        }
+    }
+
+    void isFull()
+    {
+        if (top == capacity - 1)
+        {
+            cout << "Yes, Stack is full!" << endl;
+        }
+        else
+        {
+            cout << "Nope, Stack is not full yet." << endl;
+        }
+    }
+
+    void size()
+    {
+        cout << "Current size of stack: " << count << endl;
     }
 };
 
 int main()
 {
-    LinkedList list;
-
-    int choice,element,position;
+    int choice, element;
+    Stack stack(4);
 
     do
     {
-        cout << "Press 1 for adding a node in the beginning" << endl;
-        cout << "Press 2 for adding a node in the ending" << endl;
-        cout << "Press 3 for adding a node anywhere in the list" << endl;
-        cout << "Press 4 for getting all node in the list" << endl;
-        cout << "Press 5 for updating node in the list" << endl;
-
-        cout << "Press 0 for exiting the program" << endl;
-
-        cout << "Enter a choice: ";
+        cout << "\n========= Stack Menu =========\n";
+        cout << "1. Push\n";
+        cout << "2. Pop\n";
+        cout << "3. Peek\n";
+        cout << "4. Display\n";
+        cout << "5. isEmpty\n";
+        cout << "6. isFull\n";
+        cout << "7. Size\n";
+        cout << "0. Exit\n";
+        cout << "Enter your choice: ";
         cin >> choice;
 
         switch (choice)
         {
         case 1:
-            cout << "Enter value of element : ";
+            cout << "Enter an element: ";
             cin >> element;
-            list.insertAtBeginning(element);
+            stack.push(element);
             break;
         case 2:
-            cout << "Enter value of element : ";
-            cin >> element;
-            list.insertAtEnding(element);
+            stack.pop();
             break;
         case 3:
-            cout << "Enter value of element : ";
-            cin >> element;
-            cout << "Enter position for element : ";
-            cin >> position;
-            list.insertAtPosition(element,position);
+            stack.peek();
             break;
         case 4:
-            list.getAllNode();
+            stack.display();
             break;
         case 5:
-            cout << "Enter value of element : ";
-            cin >> element;
-            cout << "Enter position for element : ";
-            cin >> position;
-            list.updateNode(element,position);
-        case 0 :
+            stack.isEmpty();
+            break;
+        case 6:
+            stack.isFull();
+            break;
+        case 7:
+            stack.size();
+            break;
+        case 0:
+            cout << "Exiting... Bye Bye!" << endl;
             break;
         default:
-            break;
+            cout << "Invalid choice!" << endl;
         }
+    } while (choice != 0);
 
-    } while (choice != 0);  
+    return 0;
 }
