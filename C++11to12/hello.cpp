@@ -77,6 +77,14 @@ public:
   }
   void isFull()
   {
+    if (this->capacity == this->count)
+    {
+      cout << "Stack is Full" << endl << endl;
+    }
+    else
+    {
+      cout << "Stack is not full" << endl << endl;
+    }
   }
   void size()
   {
