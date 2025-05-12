@@ -20,31 +20,81 @@ public:
 
   void push(int element)
   {
+    if (this->capacity == this->count)
+    {
+      cout << "Stack is over flowed" << endl <<endl;
+    }
+    else
+    {
+      this->top++;
+      this->arr[top] = element;
+      this->count++;
+      cout << "Element inserted successfully" << endl<< endl;
+    }
   }
   void pop()
   {
+    if(this->top == -1){
+      cout << "Stack is under flowed" << endl << endl;
+    }else{
+      this->top--;
+      this->count--;
+      cout << "Element deleted successfully" << endl << endl;
+    }
   }
   void peek()
   {
+    if (this->top == -1)
+    {
+      cout << "Stack is empty" << endl << endl;
+    }
+    else
+    {
+      cout << "Peek Element is : " << this->arr[this->top] << endl << endl;
+    }
   }
   void display()
   {
+    if (this->top == -1)
+    {
+      cout << "Stack is empty" << endl << endl;
+    }
+    else
+    {
+     for(int i=this->top;i>=0;i--){
+      cout << this->arr[i] << " " ;
+     }
+     cout << endl << endl;
+    }
   }
   void isEmpty()
   {
+    if(this->top==-1){
+      cout << "Stack is empty" << endl << endl;
+    }else{
+      cout << "Stack is not empty" << endl << endl;
+    }
   }
   void isFull()
   {
   }
   void size()
   {
+    if (this->top == -1)
+    {
+      cout << "Stack is empty" << endl<< endl;
+    }
+    else
+    {
+      cout << "Stack size is : " << this->count << endl << endl;
+    }
   }
 };
 
 int main()
 {
 
-  Stack stack(5);
+  Stack stack(3);
   int choice, element;
 
   do
@@ -69,10 +119,13 @@ int main()
       stack.push(element);
       break;
     case 2:
+      stack.pop();
       break;
     case 3:
+      stack.peek();
       break;
     case 4:
+      stack.display();
       break;
     case 5:
       break;
