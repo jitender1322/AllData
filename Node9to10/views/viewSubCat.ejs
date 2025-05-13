@@ -101,8 +101,8 @@
                                         <tr>
                                             <td><%=i+1%></td>
                                             <td><%=e.subCatName%></td>
-                                            <td><%=e.catName%></td>
-                                            <td><img src="/<%=e.image%>" width="20%" alt=""></td>
+                                            <td><%=e.categoryId.catName%></td>
+                                            <td><img src="/<%=e.categoryId.image%>" width="20%" alt=""></td>
                                             <td><a href="/editAdmin?id=<%=e.id%>"><button class="btn">Edit</button></a></td>
                                             <td><a href="/deleteAdmin?id=<%=e.id%>"><button class="btn">Delete</button></a></td>
                                         </tr>
