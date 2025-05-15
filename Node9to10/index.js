@@ -36,6 +36,7 @@ app.use(flash.setFlash)
 app.use("/", require("./routes/route"));
 app.use("/category", require("./routes/categoryRoute"));
 app.use("/subCategory", require("./routes/subCategoryRoute"));
+app.use("/product", require("./routes/product"));
 
 app.listen(port, (err) => {
   err ? console.log(err) : console.log("server started on port : " + port);

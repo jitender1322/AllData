@@ -1,43 +1,28 @@
 #include <iostream>
 using namespace std;
-#include <string.h>
 
-class Node{
-    public:
-        int data;
-        Node *next;
+int main()
+{
 
-    Node(int data){
-        this->data = data;
-        this->next=NULL;
+    int arr[5] = {12, 54, 2, 56, 3};
+    int pass = 1;
+
+    while (pass <= 5 - 1)
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if (arr[i] > arr[i + 1])
+            {
+                int temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+        }
+        pass++;
+    };
+
+    for(int a : arr)
+    {
+        cout << a << " ";
     }
 };
-
-class LinkedList{
-    public:
-        Node *head;
-        int count;
-    
-    LinkedList(){
-        this->head=NULL;
-        this->count=0;
-    }
-
-    void insertElement(int element){
-        Node *newNode = new Node(element);
-        newNode->next=this->head;
-        this->head= newNode;
-        this->count++;
-        cout << "Element inserted successfully!";
-    }
-};
-
-
-int main(){
-
-    LinkedList link;
-
-    link.insertElement(25);
-
-    return 0;
-}
