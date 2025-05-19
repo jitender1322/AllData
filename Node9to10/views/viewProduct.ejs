@@ -105,10 +105,10 @@
                                             <td><%=i+1%></td>
                                             <td><%=e.productName%></td>
                                             <td><%=e.productPrice%></td>
-                                            <td><img src="/<%=e.image%>" width="20%" alt=""></td>
+                                            <td><img src="/<%=e.image%>" width="100px" alt=""></td>
                                             <td><%=e.subCategoryId.subCatName%></td>
                                             <td><%=e.subCategoryId.categoryId.catName%></td>
-                                            <td><img src="/<%=e.subCategoryId.categoryId.image%>" width="20%" alt=""></td>
+                                            <td><img src="/<%=e.subCategoryId.categoryId.image%>" width="100px" alt=""></td>
                                             <td><a href="/editAdmin?id=<%=e.id%>"><button class="btn">Edit</button></a></td>
                                             <td><a href="/deleteAdmin?id=<%=e.id%>"><button class="btn">Delete</button></a></td>
                                         </tr>

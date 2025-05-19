@@ -1,154 +1,59 @@
 #include <iostream>
 using namespace std;
 
-class Stack
-{
-private:
-  int *arr;
-  int top;
-  int capacity;
-  int count;
 
-public:
-  Stack(int capacity)
-  {
-    this->arr = new int[capacity];
-    this->top = -1;
-    this->capacity = capacity;
-    this->count = 0;
+int main(){
+
+  int n;
+
+  cout << "Enter the number of element in array : ";
+  cin >> n;
+
+  int arr[n];
+
+  for(int i=0;i<n;i++){
+    cout << "Enter the element : ";
+    cin >> arr[i];
+    cout << endl;
   }
 
-  void push(int element)
-  {
-    if (this->capacity == this->count)
-    {
-      cout << "Stack is over flowed" << endl <<endl;
-    }
-    else
-    {
-      this->top++;
-      this->arr[top] = element;
-      this->count++;
-      cout << "Element inserted successfully" << endl<< endl;
-    }
-  }
-  void pop()
-  {
-    if(this->top == -1){
-      cout << "Stack is under flowed" << endl << endl;
-    }else{
-      this->top--;
-      this->count--;
-      cout << "Element deleted successfully" << endl << endl;
-    }
-  }
-  void peek()
-  {
-    if (this->top == -1)
-    {
-      cout << "Stack is empty" << endl << endl;
-    }
-    else
-    {
-      cout << "Peek Element is : " << this->arr[this->top] << endl << endl;
-    }
-  }
-  void display()
-  {
-    if (this->top == -1)
-    {
-      cout << "Stack is empty" << endl << endl;
-    }
-    else
-    {
-     for(int i=this->top;i>=0;i--){
-      cout << this->arr[i] << " " ;
-     }
-     cout << endl << endl;
-    }
-  }
-  void isEmpty()
-  {
-    if(this->top==-1){
-      cout << "Stack is empty" << endl << endl;
-    }else{
-      cout << "Stack is not empty" << endl << endl;
-    }
-  }
-  void isFull()
-  {
-    if (this->capacity == this->count)
-    {
-      cout << "Stack is Full" << endl << endl;
-    }
-    else
-    {
-      cout << "Stack is not full" << endl << endl;
-    }
-  }
-  void size()
-  {
-    if (this->top == -1)
-    {
-      cout << "Stack is empty" << endl<< endl;
-    }
-    else
-    {
-      cout << "Stack size is : " << this->count << endl << endl;
-    }
-  }
-};
 
-int main()
-{
+  //Bubble Sort
 
-  Stack stack(3);
-  int choice, element;
+  // int pass = 1;
 
-  do
-  {
+  // while (pass<n)
+  // {
+  //   for(int i=0;i<n-pass;i++){
+  //     if(arr[i]>arr[i+1]){
+  //       int temp = arr[i];
+  //       arr[i] = arr[i+1];
+  //       arr[i+1] = temp; 
+  //     }
+  //   }
+  //   pass++;
+  // }
 
-    cout << "Press 1 for push" << endl;
-    cout << "Press 2 for pop" << endl;
-    cout << "Press 3 for peek" << endl;
-    cout << "Press 4 for display" << endl;
-    cout << "Press 5 for isEmpty" << endl;
-    cout << "Press 6 for isFull" << endl;
-    cout << "Press 7 for size" << endl;
-    cout << "Press 0 for exit" << endl;
+  //Insertion sort
 
-    cin >> choice;
-
-    switch (choice)
-    {
-    case 1:
-      cout << "Enter the element : ";
-      cin >> element;
-      stack.push(element);
-      break;
-    case 2:
-      stack.pop();
-      break;
-    case 3:
-      stack.peek();
-      break;
-    case 4:
-      stack.display();
-      break;
-    case 5:
-      break;
-    case 6:
-      break;
-    case 7:
-      break;
-    case 0:
-      break;
-    default:
-      cout << "Invalid Choice";
-      break;
+  for(int i=1;i<n;i++){
+    int key = arr[i];
+    int j = i-1;
+    while (j>=0 && key < arr[j]){
+        arr[j+1] = arr[j];
+        j--;
     }
+    {
+      /* code */
+    }
+    
+  }
 
-  } while (choice != 0);
+  for(int a : arr){
+    cout << a << "-";
+  }
+  
+
 
   return 0;
 }
