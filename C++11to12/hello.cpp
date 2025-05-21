@@ -4,55 +4,30 @@ using namespace std;
 
 int main(){
 
-  int n;
+  int n,element;
 
-  cout << "Enter the number of element in array : ";
+  cout << "Enter the number of elements : ";
   cin >> n;
 
   int arr[n];
 
   for(int i=0;i<n;i++){
-    cout << "Enter the element : ";
+    cout << "Enter the " << i+1 << " Element : ";
     cin >> arr[i];
-    cout << endl;
   }
 
+  cout << "Enter the element to search from the Array : ";
+  cin >> element;
 
-  //Bubble Sort
-
-  // int pass = 1;
-
-  // while (pass<n)
-  // {
-  //   for(int i=0;i<n-pass;i++){
-  //     if(arr[i]>arr[i+1]){
-  //       int temp = arr[i];
-  //       arr[i] = arr[i+1];
-  //       arr[i+1] = temp; 
-  //     }
-  //   }
-  //   pass++;
-  // }
-
-  //Insertion sort
-
-  for(int i=1;i<n;i++){
-    int key = arr[i];
-    int j = i-1;
-    while (j>=0 && key < arr[j]){
-        arr[j+1] = arr[j];
-        j--;
+  for(int i=0;i<n;i++){
+    if(arr[i]==element){
+      cout << "The element is found on index : " << i << endl;
+      break;
+    }else{
+      cout << "Given element is not in array";
     }
-    {
-      /* code */
-    }
-    
   }
 
-  for(int a : arr){
-    cout << a << "-";
-  }
-  
 
 
   return 0;
