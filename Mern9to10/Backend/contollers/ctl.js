@@ -26,3 +26,9 @@ module.exports.logIn = async (req,res)=>{
     return res.status(200).json({ msg: "Admin password is wrong !", code: 102 });
   }
 }
+
+module.exports.allAdmin =async (req,res)=>{
+  await schema.find({}).then((data)=>{
+    res.status(200).json({msg : "All data is here!",data : data})
+  })
+}
