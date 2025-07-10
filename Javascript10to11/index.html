@@ -4,21 +4,67 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+      div {
+        width: 100%;
+        height: 100vh;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+      }
+      #one {
+        background-image: url("./bg-3.jpg");
+      }
+      #two {
+        background-image: url("./bg.jpg");
+        background-attachment: scroll;
+      }
+      #three {
+        background-image: url("./pexels-hngstrm-2341290.jpg");
+      }
+      /* Navbar style */
+      nav {
+        width: 100%;
+        background-color: #333;
+        color: white;
+        z-index: 1000;
+        transition: top 0.3s ease; /* smooth slide */
+      }
+
+      .fixed {
+        position: fixed;
+        top: -80px;
+      }
+
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        padding: 1rem;
+        justify-content: center;
+        gap: 2rem;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
-    <h1 id="heading">Hello JS</h1>
-    <button id="hide">hide</button>
-    <button id="show">show</button>
-    <button id="toggle">hide/show</button>
+    <nav id="navbar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
 
-    <button id="up">slide up</button>
-    <button id="down">slide down</button>
-    <button id="slideToggle">up/down</button>
-
-    <button id="in">fade in</button>
-    <button id="out">fade out</button>
-    <button id="fadeToggle">in/out</button>
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
     <script src="./app.js"></script>
   </body>
 </html>

@@ -1,12 +1,11 @@
-import React from 'react'
-import ArrayOfObj from './Components/ArrayOfObj'
-import UseState from './Components/UseState'
+import React from "react";
+import Searching from "./Components/Searching";
+import BasicsOfApi from "./Api/BasicsOfApi";
 
 export default function App() {
-
   return (
-    <div>
-      <UseState/>
-    </div>
-  )
+    <>
+      <BasicsOfApi/>
+    </>
+  );
 }

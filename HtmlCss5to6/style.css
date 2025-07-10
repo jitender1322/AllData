@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* static relative absolute stickey fixed */
+
+
+.box{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgb(180, 147, 147);
+   position: absolute;
+   top: 0;
+   z-index: 15;
+}
+
+
+p{
+    position: relative;
+    z-index: 66;
+}

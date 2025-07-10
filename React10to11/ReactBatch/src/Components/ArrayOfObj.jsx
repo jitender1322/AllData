@@ -1,20 +1,61 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-export default function ArrayOfObj({id,name,subject}) {
+export default function ArrayOfObj() {
 
-    // const singleData = arr.find((item)=>item.id == 3);
+  const [name,setName] =useState('')
+  const [sub,setSub]=useState('')
+  const [city,setCity]=useState('')
 
-    // const filteredData = arr.filter((item)=>item.id != 4)
+  const [record,setRecord]=useState([])
+  console.log("this is state re render");
+  
 
+  const handleBtn = ()=>{
+    let obj = {name,sub,city};
+    setRecord([...record,obj])
+    setName('')
+    setSub('')
+    setCity('')
+  }
   return (
-    <div>
-      <h1>ArrayOfObj</h1>
-             <ul>
-                <li>{id}</li>
-                <li>{name}</li>
-                <li>{subject}</li>
-            </ul>
-       
-    </div>
+    <>
+      <h1>Create Here</h1>
+      <input
+        type="text"
+        placeholder="Enter your name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Enter your subject"
+        value={sub}
+        onChange={(e) => setSub(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Enter your city"
+        value={city}
+        onChange={(e) => setCity(e.target.value)}
+      />
+      <button onClick={handleBtn}>Create</button>
+
+
+      {
+
+        record.length > 0 ?
+
+        record.map((e,i)=>{
+          return <ul key={i}>
+            <li>{e.name}</li>
+            <li>{e.sub}</li>
+            <li>{e.city}</li>
+          </ul>
+        })
+
+        :
+        <p>No Data Found</p>
+      }
+    </>
   );
 }

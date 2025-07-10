@@ -1,0 +1,289 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff5200;
+    color: white;
+    padding: 30px 80px;
+}
+
+nav img{
+    width: 12%;
+}
+
+.nav-mini{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-mini button{
+    padding: 15px 20px;
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
+    border-radius: 14px;
+}
+
+.btn-1{
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.btn-2{
+    background-color: black;
+    border: 2px solid black;
+}
+
+
+
+
+
+.main{
+    width: 100%;
+    height: 100vh;
+    background-color: #ff5200;
+    color: white;
+    padding-top: 100px;
+}
+
+.main-1{
+    position: relative;
+    width: 65%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main-1 h1{
+    font-size: 60px;
+}
+
+.inputs{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 30px;
+}
+
+.inputs div{
+    width: 400px;
+    background-color: white;
+    padding: 27px 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputs input{
+    border: none;
+    outline: none;
+}
+
+.inputs i{
+    font-size: 20px;
+}
+
+.main-1 img{
+    position: absolute;
+    width: 30%;
+}
+
+.main-1 .pic-1{
+    top: -50px;
+    right: -266px;
+}
+
+.main-1 .pic-2{
+    top: -50px;
+    left: -300px;
+}
+
+.main-2{
+    text-align: center;
+}
+
+.main-2 img{
+    width: 35%;
+}
+
+
+
+
+
+
+.end{
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.first{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.first h1{
+    font-size: 35px;
+}
+
+.first button{
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(206, 201, 201);
+    padding: 17px;
+    font-size: 20px;
+}
+
+
+
+
+.cards{
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.card{
+    width: 400px;
+    height: 550px;
+    border-radius: 20px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.card .one{
+    width: 100%;
+    height: 50%;
+    background-image: url("./bg-1.avif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    position: relative;
+}
+
+.card .one h2{
+    color:white ;
+    position: absolute;
+    bottom: 2px;
+    left: 5px;
+}
+
+.card .two{
+    padding: 0 20px;
+}
+.card .two div{
+    margin: 15px 0px;
+}
+
+.card .two a{
+    text-decoration: none;
+    color: rgb(171, 160, 160);
+}
+
+.card .two .aone{
+    margin-right: 150px;
+}
+
+.card .two button{
+    border: none;
+    background-color:#f0f0f5 ;
+    color:#02060c99 ;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.card .two button i {
+    margin: 0 10px;
+}
+
+.flat-btn{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(27, 166, 114);
+    color: white;
+    font-weight: 700;
+    padding: 12px 20px;
+    border-radius: 12px;
+}
+
+
+.flat-btn-2{
+    background-color: #c8f9e5;
+    color: rgb(27, 166, 114);
+    font-weight: 700;
+    padding: 12px 20px;
+    border-radius: 12px;
+}
+
+.flat-btn p i{
+    margin: 0 10px;
+}
+
+
+.banner{
+    width: 100%;
+    height: 300px;
+    background-image: url('./App_download_banner.avif');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 50px 0;
+}
+
+
+
+
+
+
+footer{
+    width: 100%;
+    background-color: #f0f0f5;
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+}
+
+footer ul li{
+    list-style: none;
+    font-size: 20px;
+    color: rgba(2, 6, 12, 0.6);
+    margin: 20px 0;
+}
+
+.li-first{
+    color: black;
+    font-weight: 900;
+    font-size: 21px;
+}
+
+.li-second{
+    margin-top: 140px;
+}
+
+footer select{
+    background-color: transparent;
+    box-shadow: rgba(120, 127, 133, 0.3) 0px 1px 2px 0px, rgba(121, 128, 133, 0.15) 0px 1px 3px 1px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+footer i{
+    margin-right: 15px;
+    font-size: 30px;
+}
