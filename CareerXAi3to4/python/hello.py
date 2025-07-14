@@ -1,66 +1,116 @@
-# operator
+# while => When we don't know how many times it will run
+# for => When we know how many times it will run
 
-# + - * / = 
-#  < > <= >= ==
+# range() => this decide the range of loop exp. from 1 to 10. Range always starts from 0 and exclude the
+# last digit
 
-# bool("",0,False)  => false
+# num = int(input("Enter a number to print it's table : "))
 
-# a = 0
+# for i in range(1,num):
+#     print(f" {i} x {i} x {i} = {i*i*i}")
 
-# if bool(a):
-#     print("hello")
+# a=10
 
-# name = input("Enter your name")
-
-# if bool(name):
-#     print(f"Your name is {name}")
-# else:
-#     print("You not enterd your name")
+# while a<20:
+#     if a == 15 :
+#         break
+#     print(a)
+#     a = a+ 1
 
 
-# num1 = int(input("Enter the first number :"))
-# num2 = int(input("Enter the second number :"))
+# while True:
+#     print("Welcome to our cafe\n")
 
-# if num1 == num2:
-#     print(f"The first number : {num1} and the second number : {num2} are eqaul")
-# elif num1>num2:
-#     print(f"The first number : {num1} is greater than num second : {num2}")
-# else:
-#     print(f"The second number : {num2} is greater than num first : {num1}")
+#     print("Enter 1 for pizza")
+#     print("Enter 2 for burger")
+#     print("Enter 3 for sandwich")
+#     print("Enter 4 for cold drink")
+#     print("Enter 0 for exit")
 
-# a = 35 b=45 c=34
-# Nested ifelse
-
-# a>b
-
-# a = int(input("Enter the first number :"))
-# b = int(input("Enter the second number :"))
-# c = int(input("Enter the third number :"))
-
-# if a>b:
-#     if a>c:
-#        print(" A is largest")
+#     num = int(input("enter a number : "))
+    
+#     if num ==1:
+#         print("You ordered a pizza \n \n")
+#     elif num ==2:
+#         print("You ordered a burger \n \n")
+#     elif num ==3:
+#         print("You ordered a sandwich \n \n")
+#     elif num ==4:
+#         print("You ordered a cold drink \n \n")
+#     elif num ==0:
+#         print("Thank you for visiting \n \n")
+#         break
 #     else:
-#        print(" C is largest")
-# else:
-#     if b>c:
-#         print("B is largest")
-#     else:
-#         print("C is largest")
-
-
-age = int(input("Enter your age :"))
-weight = float(input("Enter your weight(kg) :"))
-
-if age>=18:
-    if weight>=45:
-        print("You can enjoy the ride")
-    else:
-        print("Sorry you are not allowed")
-else:
-    print("You are below the required age")
+#         print("You entered wrong number")
 
 
 
+# sum = 0
 
+# while True:
+#     num = int(input("enter num :"))
+#     print("\n\n\nEnter 0 to show result\n\n")
+#     sum+=num
+#     if num==0:
+#         print(sum)
+#         break
+
+
+# *
+# **
+# ***
+# ****
+# *****
+
+
+# ******
+# *****
+# ****
+# ***
+# **
+# *
+
+# 1
+# 12
+# 123
+# 1234
+# 12345
+
+# for i in range(0,6):
+#     print("& "*i)
+
+# for i in range(6,0,-1):
+#     print("* "*i)
+
+# for i in range(1,6):
+#     print(str(i)*i)
+
+
+
+# for i in range(1,6):
+#     for j in range(1,i):
+#         print(j,end=" ")
+#     print("\n")
+
+while True:
+    print("Welcome to patter library\n")
+
+    print("press 1 for star pattern")
+    print("press 2 for number pattern")
+    print("press 3 for other pattern")
+
+    choice = int(input("Enter your choice : "))
+
+    if choice==1:
+        for i in range(0,6):
+            print("& "*i)
+    elif choice==2:
+        for i in range(1,6):
+            for j in range(1,i):
+                print(j,end=" ")
+            print("\n")
+    elif choice==3:
+        for i in range(1,6):
+            print(str(i)*i)
+        
 
