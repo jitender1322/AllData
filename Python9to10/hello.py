@@ -1,23 +1,93 @@
-# print(234)
+# set -> unordered , does not allow duplicates
 
-# print(45+45)
-# print("\nThis is \n print function\n")
-# print("This is print function")
-# print()
-# print("This is print function",4543,"this is another print",sep="@", end="$")
+# sett = {"apple","orange","graps","apple","graps"}
+# sett = frozenset({"apple","orange","graps","apple","graps"})
 
-
-
-# print("*")
-# print("* *")
-# print("* * *")
-# print("* * * * *")
-# print("* * * * * *")
+# sett.add("banana")
+# sett.remove("cherry")
+# # sett.clear()
+# # pop add remove discard union intesection 
 
 
 
+# print(sett)
 
-input("enter your name : ")
-input("\nenter your city : ")
 
-print("Your name is ")
+
+# Dict - orederd  mutable 
+
+# key value
+
+student = {
+    "name" : "Rahul",
+    "age" : 34,
+    "city":"Rajkot",
+    "married":False,
+    "height" : 5.4
+}
+
+students = [
+    {
+    "name" : "Rahul",
+    "age" : 34,
+    "city":"Rajkot",
+    "married":False,
+    "height" : 5.4
+},{
+    "name" : "Rahul",
+    "age" : 34,
+    "city":"Rajkot",
+    "married":False,
+    "height" : 5.4
+},{
+    "name" : "Rahul",
+    "age" : 34,
+    "city":"Rajkot",
+    "married":False,
+    "height" : 5.4
+},{
+    "name" : "Rahul",
+    "age" : 34,
+    "city":"Rajkot",
+    "married":False,
+    "height" : 5.4
+},{
+    "name" : "Rahul",
+    "age" : 34,
+    "city":"Rajkot",
+    "married":False,
+    "height" : 5.4
+},{
+    "name" : "Rahul",
+    "age" : 34,
+    "city":"Rajkot",
+    "married":False,
+    "height" : 5.4
+},{
+    "name" : "Rahul",
+    "age" : 34,
+    "city":"Rajkot",
+    "married":False,
+    "height" : 5.4
+}
+]
+
+
+student["state"] = "Gujrat" #add
+ 
+student["age"] = 24  #update
+
+del student["height"]  #delete
+
+print(student.get("country","-"))  # return the default value if the key not exist
+
+
+print(student)
+# print(student)
+# print(student["name"])
+
+# for key in student:
+#     print(key)
+
+# for key,value in student.items():
+#     print(key,"->",value)

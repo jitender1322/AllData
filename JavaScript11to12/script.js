@@ -1,18 +1,19 @@
-let heading = document.getElementById("heading")
+// $(document).ready(()=>{
+//   alert("this is alert")
+// })
 
-let value1 = 0
-let value2 = 0
+// $("#heading").click(()=>{
+//   console.log("hello");
+// })
 
+$("#btn").click(()=>{
+  // $("#heading").hide()
+  // $("#heading").fadeOut()
+  $("#heading").slideUp()
+})
 
-function calc(a){
-    console.log(typeof(heading.innerText));
-    
-    heading.style.backgroundColor = a
-}
-
-
-window.addEventListener("scroll",()=>{
-   if(window.scrollY>1000){
-    document.getElementById("body").style.backgroundColor = "red";
-   }
+$("#btn-2").dblclick(()=>{
+  // $("#heading").fadeIn()
+  // $("#heading").slideDown()
+  $("#heading").slideToggle()
 })

@@ -1,0 +1,1 @@
+print("The package pandas is imported")

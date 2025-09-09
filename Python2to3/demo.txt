@@ -1,0 +1,11 @@
+this is 24 write mode..
+
+this is write mode 25..
+
+this is write 26 mode..
+
+this is write 55 mode..
+
+this is 55 write mode..
+
+this is 55  write mode..

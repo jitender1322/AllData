@@ -1,13 +1,19 @@
 import React from "react";
-import Searching from "./Components/Searching";
-import BasicsOfApi from "./Api/BasicsOfApi";
-import JsonApi from "./Api/JsonApi";
+import SignUp from "./firebase/SignUp";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import LogIn from "./firebase/LogIn";
+import Dashboard from "./firebase/Dashboard";
 
 export default function App() {
   return (
     <>
-      {/* <BasicsOfApi/> */}
-      <JsonApi/>
+   <BrowserRouter>
+    <Routes>
+      <Route path="/"  Component={SignUp} ></Route>
+      <Route path="/login"  Component={LogIn} ></Route>
+      <Route path="/dashboard"  Component={Dashboard} ></Route>
+    </Routes>
+   </BrowserRouter>
     </>
   );
 }

@@ -6,6 +6,7 @@ export default function JsonApi() {
     const [name,setName] =useState("")
     const [subject,setSubject]=useState("")
     const [record,setRecord]=useState([])
+    const [editIndex,setEditIndex]=useState(null)
 
     useEffect(()=>{
         fetchApi()
@@ -18,12 +19,23 @@ export default function JsonApi() {
     }
 
     const handleAddData = async ()=>{
-      await axios.post("http://localhost:1008/users",{name,subject}).then((res)=>{
-        setRecord([...record,{name,subject}])
-      })
+      if(editIndex ==null){
+          await axios
+            .post("http://localhost:1008/users", { name, subject })
+            .then((res) => {
+              setRecord([...record, { name, subject }]);
+            });
+      }else{
+         await axios
+           .put(`http://localhost:1008/users/${editIndex}`, { name, subject })
+           .then((res) => {
+             console.log(res);
+           });
+      }
 
       setName("")
       setSubject("")
+      setEditIndex(null)
     }
 
     const handleDelete = async (id)=>{
@@ -31,6 +43,13 @@ export default function JsonApi() {
       let newRecord = record.filter((item)=>item.id != id)
       setRecord(newRecord)
      })
+    }
+
+    const handleEdit = (id)=>{
+      let singleData = record.find((item)=>item.id == id)
+      setName(singleData.name)
+      setSubject(singleData.subject)
+      setEditIndex(id)
     }
 
   return (
@@ -50,17 +69,17 @@ export default function JsonApi() {
         onChange={(e) => setSubject(e.target.value)}
       />
 
-      <button onClick={handleAddData}>Add Data</button>
+      <button onClick={handleAddData}>{editIndex==null ? "Add Data" : "Update Data"}</button>
 
       {record &&
         record.map((e, i) => {
           return (
             <ul key={i}>
-              <li>{i+1}</li>
+              <li>{i + 1}</li>
               <li>{e.name}</li>
               <li>{e.subject}</li>
-              <button>Edit</button>
-              <button onClick={()=>handleDelete(e.id)}>Delete</button>
+              <button onClick={() => handleEdit(e.id)}>Edit</button>
+              <button onClick={() => handleDelete(e.id)}>Delete</button>
             </ul>
           );
         })}
