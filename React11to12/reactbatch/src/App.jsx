@@ -1,12 +1,10 @@
 import React from 'react'
-import UseState from './Components/Hooks/UseState'
-import UseEffect from './Components/Hooks/UseEffect'
+import Api from './Components/Api'
 
 export default function App() {
   return (
     <div>
-      {/* <UseState/> */}
-      <UseEffect/>
+      <Api/>
     </div>
   )
 }

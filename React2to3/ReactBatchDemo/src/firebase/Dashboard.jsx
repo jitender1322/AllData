@@ -56,11 +56,12 @@ export default function Dashboard() {
     let obj = { uid: user.uid, task, priority };
 
     if (editIndex == null) {
-      let addData = await addDoc(collection(db, "Todos"), obj).then((data) => {
+      await addDoc(collection(db, "Todos"), obj).then((data) => {
         setRecord([...record, obj]);
       });
+      
     } else {
-      let updateData = await updateDoc(doc(db, "Todos", editIndex), {
+      await updateDoc(doc(db, "Todos", editIndex), {
         id: user.uid,
         task,
         priority,
@@ -74,7 +75,7 @@ export default function Dashboard() {
   };
 
   let handelDelete = async (id) => {
-    let deleteData = await deleteDoc(doc(db, "Todos", id));
+    await deleteDoc(doc(db, "Todos", id));
     fetchData();
   };
 
