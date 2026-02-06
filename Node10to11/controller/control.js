@@ -4,9 +4,11 @@ const mailer = require("../middelwares/mailer")
 module.exports.loginPage = (req, res) => {
   res.render("login");
 };
+
 module.exports.login = async (req, res) => {
   res.redirect("/dashboard");
 };
+
 module.exports.dashboard = (req, res) => {
   res.render("dashboard");
 };
@@ -14,6 +16,7 @@ module.exports.dashboard = (req, res) => {
 module.exports.addAdmin = (req, res) => {
   res.render("addAdmin");
 };
+
 module.exports.addAdminData = async (req, res) => {
   await schema.create(req.body).then(() => {
     res.redirect("/addAdmin");
