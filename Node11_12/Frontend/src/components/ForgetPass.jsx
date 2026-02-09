@@ -17,7 +17,7 @@ export default function ForgetPass() {
 
   const sendOtp = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:2312/forgetPass",formdata).then((res)=>{
+    await axios.post("http://localhost:2312/forgetPass",formdata,{withCredentials:true}).then((res)=>{
       navigate("/verifyPass")
     })
   }

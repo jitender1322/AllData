@@ -20,14 +20,15 @@ module.exports.register = async (req, res) => {
 }
 
 module.exports.login = async (req, res) => {
+  
     let user = await Schema.findOne({ email : req.body.email });
-
+    
     if(!user){
         return res.json({msg: "User not registered", auth: false});
     }
 
     if(await bcrypt.compare(req.body.password, user.password)){
-        let token = jwt.sign({user : user},"rnw",{expiresIn : "1h"});
+        let token = jwt.sign({user : user},"rnw",{expiresIn : "1h"});  
         res.json({msg: "Login successful",token: token, user: user, auth: true});
     }else{
         res.json({msg: "Invalid password", auth: false});
@@ -65,13 +66,21 @@ module.exports.forgetPass = async (req,res)=>{
     mailer.sendOtp(req.body.email,otp)
 
     req.session.otp = otp
-    req.session.userData = user
+    req.session.userId = user._id
 
     res.json({msg : "OTP sended Successfully !"})
 }
 
 module.exports.verifyPass = async (req,res)=>{
-    console.log(req.body);
-    console.log(req.session.otp);
-    console.log(req.session.userData); 
+   let otp = req.session.otp
+   let userId = req.session.userId
+
+   if(otp==req.body.otp){
+    let newPassword = await bcrypt.hash(req.body.password,10)
+    await Schema.findByIdAndUpdate(userId,{password:newPassword}).then((data)=>{
+        res.json({msg : "password updated successfully!"})
+    })
+   }else{
+    res.json({msg :"OTP is wrong"})
+   }
 }

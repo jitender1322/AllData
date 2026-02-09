@@ -17,8 +17,8 @@ export default function VerifyPass() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await axios.post("http://localhost:2312/verifyPass",formdata).then((res)=>{
-            console.log(res);
+        await axios.post("http://localhost:2312/verifyPass",formdata,{withCredentials:true}).then((res)=>{
+            navigate("/login")
         })
     }
     return (
