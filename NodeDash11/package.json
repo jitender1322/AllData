@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "mongoose": "^9.1.4",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
+  }
+}

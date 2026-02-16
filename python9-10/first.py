@@ -1,199 +1,160 @@
-# print("Hello")
-# print("Hello")
-# print("Hello")
-# print("Hello")
-# print("Hello")
-# print("Hello",end="-----")
-# print("Hello")
-# print("Hello")
-# print('Hello')
+# l = []
+# t = ()
+# s = {}
+# d = {}
 
-# name = input("Enter your name :")
-# print("your name is",name)
+# print(type(l))
+# print(type(t))
+# print(type(s))
+# print(type(d))
 
+# li = ["apple",34,False,45.5]
 
-# num = 23
-# name = 'rahul'
-# name2 = "sumit"
-# point = 23.3
-# choice = True
-# choice2 = False
+# del li[0]
 
-# type()  id()
+# print(li.pop(8))
+# print(li)
 
-# print(type(num))
-# print(type(name))
-# print(type(name2))
-# print(type(point))
-# print(type(choice))
-# print(type(choice2))
+# li.remove(455.5)
 
-# print(id(name))
+# print(li)
 
-# a = 10
+# print(li[3]) 
+# print(li[-1]) 
 
-# a = a + 5
-# a+=5
+# for i in li:
+#     print(i)
 
-# a = int(input("enter a num :"))
-# b = int(input("enter a num :"))
+# CRUD -> Create read update delete
 
-# print(a+b)
+# li[0] = "Graps"
 
-# fname = input("Enter your first name :")
-# lname = input("Enter your last name :")
+# li.append("sumit")
+# li.insert(2,555)
 
-# print(fname+" "+lname)
+# del li[1]
 
-# print(int(23.9))
-# print(int("wew"))
-# print(int(False))
+# print(li)
 
-# print(str(23.5))
-# print(str(23))
-# print(str(True))
+# li = [234,456,234,6,8,5645]
 
-# print(float(23))
-# print(float(True))
-# print(float(False))
+# li.sort()
+# li.reverse()
+# print(li)
 
-# print(bool(0))
-# print(bool(""))
-
-# a=10
-
-# if a>=15:
-#     print("hello")
-# elif a>13:
-#     print("")
-# else:
-#     print("bye")
-
-
-# age = 16
-# valid = True
-
-# if age >15:
-#     if valid:
-#         print()
-#     else:
-#         print()
-# else:
-#     print("not eligible")
-
-# A B C input 
-
-# a=12
-# b=15
-# c=6
-
-# if a>b:
-#     if a>c:
-#         print("a")
-#     else:
-#         print("c")
-# else:
-#     if b>c:
-#         print("b")
-#     else:
-#         print("c")
-
-# day = 2
-
-# match day:
-#     case 1:
-#         print("Mon")
-#     case 2:
-#         print("Tue")
-    
-
-# age  = 27
-
-# valid = "yes" if age>18 else "no"
-# valid = "yes" if age>18 else "may be" if age>15 else "no"
-
-# print(valid)
-
-# range(start,end,steps)
-
-# num = int(input("Enter a num :"))
-
-# start = int(input("Enter the start of range :"))
-# end = int(input("Enter the end of range :"))
-
-# for i in range(start,end+1):
-#     # print(num,"x",i,"=",i*num)
-#     # 2x1=2
-
-#     if i%2==0:
-#         print(i,"is a even number")
-#     else:
-#         print(i,"is an odd number")
-
-# i = 1
-
-# while i<10:
-#     print(i)0
-#     i += 1
+# li=[]
 
 # while True:
-#     print("Welcome to out caffe !")
-#     print()
-
-#     print("Enter 1 to order a coffee")
-#     print("Enter 2 to order a cold drink")
-#     print("Enter 3 to order a pizza")
-#     print("Enter 0 to exit")
-
-#     print()
+#     print("Enter 1 to create a list")
+#     print("Enter 2 to read a list")
+#     print("Enter 3 to delete a element of list")
+#     print("Enter 4 to update a element of list")
 
 #     choice = int(input("Enter your choice :"))
 
 #     if choice==1:
-#         # print("You ordered a coffee")
-#         while True:
-#             print()
-#             print()
-#             print()
-#             print()
+#         num = int(input("How many numbers you want to add :"))
+
+#         for i in range(num):
+#             li.append(int(input("Enter the value :")))
 #     elif choice==2:
-#         print("You ordered a cold drink")
+#         print(li)
 #     elif choice==3:
-#         print("You ordered a pizza")
-#     elif choice==0:
-#         print("Thanks for visiting")
-#         break
-#     else:
-#         print("Invalid choice")
+#         ind = int(input("Enter the index to delete : "))
+#         li.pop(ind)
+#     elif choice==4:
+#         ind = int(input("Enter the index to update : "))
+#         val = int(input("Enter the value :"))
+
+#         li[ind] = val
 
 
-# for i in range(5):
-#     print("*"*5)
+# t = (23,"sumit",False)
 
-# for i in range(1,6):
-#     print("*"*i)
+# tt = (34,)
 
-# for i in range(5,0,-1):
-#     print("*"*i)
+# del tt 
+# print(t[1])
 
-# 1
-# 22
-# 333
-# 4444
-# 55555
+# for i in t:
+#     print(i)
 
-# 55555
-# 4444
-# 333
-# 22
-# 1
+# s = set()
+# print(type(s))
 
-# for i in range(1,6):
-#     print(str(i)*i)
+# fruits = {"apple","banana","graps","apple","graps"}
 
-# for i in range(1,6):
-#     for j in range(1,i+1):
-#         print(j+1,end="")
-#     print()
+# print(fruits)
 
+# student = {
+#     "name" : "sumit",
+#     "age": 23,
+#     "height" : 5.4,
+#     "subjects" : ["hindi","english"]
+# }
 
+# print(student["name"])
+# print(student["subjects"][1])
+
+# student["name"] = "Rahul" # update
+# student["city"] = "rajkot" # create
+
+# del student["city"] # delete
+
+# print(student)
+
+# for key,value in student.items():
+#     print(key,"---",value)
+
+# Type Casting Constructor
+
+# list() tuple() set() dict() str()
+
+# l = [23,23,45,67,98,45]
+
+# t = tuple(l)
+# t[0]=676 cause error
+
+# s = set(l)
+
+# sr = str(l)
+
+# print(t)
+# print(s)
+# print(type(sr))
+
+# d = dict(l)
+
+# print(d)
+
+# name = "Sumit"
+
+# print(list(name))
+# print(tuple(name))
+# print(set(name))
+
+# p = "He is a boy"
+
+# l = p.split()
+
+# s = " ".join(l)
+
+# print(l)
+# print(s)
+
+# t = (34,45,678,45)
+
+# print(list(t))
+# print(set(t))
+
+# s = {45,76,23,76}
+
+# print(list(s))
+# print(tuple(s))
+
+# l = ["Name","Age","City"]
+# v = ["Sumit",23,"Rajkot"]
+
+# list of dict
+# list of set
+# list of tuple
