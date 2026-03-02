@@ -80,12 +80,60 @@
 
 # print(add())
 
-def get_values():
-    return 10, 20, 30  
+# def get_values():
+#     return 10, 20, 30  
 
-result = get_values()
+# result = get_values()
 # print(type(result))
 
 # unpacking
 
-a,b,c = get_values()
+# a,b,c = get_values()
+
+# li = [34,65,23,78,56]
+
+# newLi = sorted(li,reverse=True)
+
+# print(li)
+# print(newLi)
+
+# li.sort()
+
+# print(li)
+
+# li = ["apple","orange","graps","banana"]
+
+# newLi = sorted(li,key=len,reverse=True)
+
+# print(newLi)
+
+
+# li = [
+#     {"id":45,"name":"sumit","city":"rajkot"},
+#     {"id":5,"name":"aa","city":"rajkot"},
+#     {"id":35,"name":"bb","city":"rajkot"},
+#     {"id":75,"name":"fgh","city":"rajkot"},
+#     {"id":25,"name":"ertert","city":"rajkot"}
+# ]
+
+# newLi = sorted(li,key=lambda x: x["id"],reverse=True)
+
+# print(newLi)
+
+
+li = [3454,65,34,65,343,4]
+
+# newLi = [x+10 for x in li]
+
+# newLi = list(map(lambda x:x+10,li))
+
+# print(newLi)
+
+# newLi = list(filter(lambda x: x>300,li))
+# print(newLi)
+
+# from functools import reduce
+
+# newLi = reduce(lambda x,y : x-y,li)
+
+# print(newLi)

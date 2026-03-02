@@ -16,6 +16,8 @@ module.exports.addSubCategory = async (req, res) => {
 
 module.exports.viewSubCat = async(req,res)=>{
     await subCatSchema.find({}).populate("categoryId").then((data)=>{
-        res.render("viewSubCat",{data})
+        console.log(data);
+        
+        // res.render("viewSubCat",{data})
     })
 }
