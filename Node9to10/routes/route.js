@@ -12,19 +12,19 @@ route.post(
 
 route.get("/logout",ctl.logout)
 
-route.get("/dashboard",passport.checkAuth ,ctl.dashboard);
+route.get("/dashboard" ,ctl.dashboard);
 
-route.get("/addAdmin", passport.checkAuth,ctl.addAdmin);
-route.post("/addAdmin", passport.checkAuth, ctl.addAdminData);
+route.get("/addAdmin", ctl.addAdmin);
+route.post("/addAdmin",  ctl.addAdminData);
 
-route.get("/viewAdmin", passport.checkAuth, ctl.viewAdmin);
+route.get("/viewAdmin",  ctl.viewAdmin);
 
-route.get("/deleteAdmin", passport.checkAuth, ctl.deleteAdmin);
+route.get("/deleteAdmin",  ctl.deleteAdmin);
 
-route.get("/profile",passport.checkAuth,ctl.profile)
+route.get("/profile",ctl.profile)
 
-route.get("/changePassword",passport.checkAuth,ctl.changePassword)
-route.post("/changePass", passport.checkAuth, ctl.changePass);
+route.get("/changePassword",ctl.changePassword)
+route.post("/changePass",  ctl.changePass);
 
 route.post("/lostPass",ctl.lostPass)
 route.post("/forgetPass",ctl.forgetPass)

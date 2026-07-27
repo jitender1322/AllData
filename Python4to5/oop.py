@@ -216,48 +216,122 @@ class Developer(Employee):
 
 
 
-e_list = []
-m_list = []
-d_list = []
+# e_list = []
+# m_list = []
+# d_list = []
 
 
-while True:
+# while True:
 
-    print("Enter 1 to employee")
-    print("Enter 2 to manager")
-    print("Enter 3 to developer\n")
-    print("Enter 4 to view\n")
+#     print("Enter 1 to employee")
+#     print("Enter 2 to manager")
+#     print("Enter 3 to developer\n")
+#     print("Enter 4 to view\n")
 
-    choice = int(input("Enter choice :"))
+#     choice = int(input("Enter choice :"))
 
-    match choice:
-        case 1:
-            id = len(e_list) + 1
-            eobj = Employee(id,"sumit",23,34000)
-            e_list.append(eobj)
-        case 2:
-            id = len(m_list) + 1
-            mobj = Manager(id,"sumit",23,34000,"hr")
-            m_list.append(mobj)
-        case 3:
-            id = len(d_list) + 1
-            dobj = Developer(id,"sumit",23,34000,"Java")
-            d_list.append(dobj)
-        case 4:
-            ch = int(input("Enter 1,2,3 respectively for em,mana,dev : "))
+#     match choice:
+#         case 1:
+#             id = len(e_list) + 1
+#             eobj = Employee(id,"sumit",23,34000)
+#             e_list.append(eobj)
+#         case 2:
+#             id = len(m_list) + 1
+#             mobj = Manager(id,"sumit",23,34000,"hr")
+#             m_list.append(mobj)
+#         case 3:
+#             id = len(d_list) + 1
+#             dobj = Developer(id,"sumit",23,34000,"Java")
+#             d_list.append(dobj)
+#         case 4:
+#             ch = int(input("Enter 1,2,3 respectively for em,mana,dev : "))
 
-            if ch==1:
-                for e in e_list:
-                    e.getInfo()
-            elif ch==2:
-                for m in m_list:
-                    m.getInfo()
-            elif ch==3:
-                for d in d_list:
-                    d.getInfo()
-            else : 
-                print("choice is wrong")
-        case _:
-            pass
+#             if ch==1:
+#                 for e in e_list:
+#                     e.getInfo()
+#             elif ch==2:
+#                 for m in m_list:
+#                     m.getInfo()
+#             elif ch==3:
+#                 for d in d_list:
+#                     d.getInfo()
+#             else : 
+#                 print("choice is wrong")
+#         case _:
+#             pass
 
     
+# a = 10/0
+
+# file = open("demo.txt","r")
+
+# a = int("a")
+
+# arr = [34,65]
+
+# arr[3]
+
+#try except else finally
+
+
+# print("hello")
+# print("hello")
+# print("hello")
+
+# try:
+#     a= 10/0
+# except ZeroDivisionError:
+#     print("not valid")
+
+# print("hello")
+# print("hello")
+# print("hello")
+
+# try:
+#     # choice = int(input("Enter your choice :"))
+#     file = open("demo.txt")
+# except ValueError:
+#     print("Not valid")
+# except FileNotFoundError:
+#     print("Not valid")
+
+
+
+# try:
+#     a=10/2
+# except ZeroDivisionError:
+#     print("not valid")
+# else:
+#     print("no error")
+# finally:
+#     print("always")
+
+# try:
+#     a = 10/0
+# except Exception:
+#     print("not valid",Exception)
+
+
+# age = int(input("Enter your age :"))
+
+# print(age)
+# print(age)
+# print(age)
+# assert age>18, "This is assert"
+# print(age)
+# print(age)
+# print(age)
+# if age<18:
+#     raise Exception("not valid")
+
+
+# class MyException(Exception):
+#     pass
+  
+# raise MyException
+
+
+
+
+
+

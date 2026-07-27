@@ -7,11 +7,11 @@ route.get("/",ctl.login)
 route.post("/login",passport.authenticate("localSt",{failureRedirect:"/"}),ctl.loginAdmin)
 route.get("/logout",ctl.logout)
 
-route.get("/dashboard",passport.checkAuth,ctl.dashboard)
+route.get("/dashboard",ctl.dashboard)
 
-route.get("/addAdmin",passport.checkAuth,ctl.addAdmin)
-route.post("/addAdmin",passport.checkAuth,ctl.addAdminData)
+route.get("/addAdmin",ctl.addAdmin)
+route.post("/addAdmin",ctl.addAdminData)
 
-route.get("/viewAdmin",passport.checkAuth,ctl.viewAdmin)
+route.get("/viewAdmin",ctl.viewAdmin)
 
 module.exports = route
