@@ -1,145 +1,305 @@
+# Detailed Data Science Interview Questions HTML Template
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detailed Data Science Interview Questions</title>
 
-    input::placeholder{
-      color: white;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  </style>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#fdf2f8,#eff6ff,#ecfccb);
+    padding:40px;
+    color:#1e293b;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+h1{
+    text-align:center;
+    font-size:48px;
+    color:#7c3aed;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    text-align:center;
+    font-size:20px;
+    color:#475569;
+    margin-bottom:50px;
+}
+
+.card{
+    background:#ffffff;
+    border-radius:24px;
+    padding:30px;
+    margin-bottom:35px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    border-left:10px solid #8b5cf6;
+}
+
+.question{
+    font-size:28px;
+    font-weight:700;
+    color:#7c3aed;
+    margin-bottom:20px;
+    line-height:1.5;
+}
+
+.answer{
+    font-size:17px;
+    line-height:2;
+    color:#334155;
+    margin-bottom:20px;
+}
+
+.example{
+    background:#f8fafc;
+    padding:20px;
+    border-radius:16px;
+    margin-top:20px;
+    border:1px solid #cbd5e1;
+}
+
+.example-title{
+    font-weight:700;
+    color:#0f172a;
+    margin-bottom:10px;
+}
+
+.code{
+    background:#0f172a;
+    color:#f8fafc;
+    padding:15px;
+    border-radius:12px;
+    overflow-x:auto;
+    margin-top:10px;
+    font-family:monospace;
+}
+
+.plot-image{
+    width:100%;
+    max-width:700px;
+    margin-top:25px;
+    border-radius:16px;
+    border:3px solid #ddd6fe;
+}
+
+.number{
+    background:#8b5cf6;
+    color:white;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    margin-right:12px;
+    font-size:20px;
+}
+
+.footer{
+    text-align:center;
+    margin-top:50px;
+    font-size:18px;
+    color:#475569;
+}
+</style>
 </head>
+
 <body>
-  <nav class="flex justify-between px-5 py-3 max-sm:bg-[red] text-white">
-    <h1>Logo</h1>
-    <div>
-      <input type="text" placeholder="Search Here..">
-    </div>
-    <ul class="flex gap-5">
-      <li><a href="">Home</a></li>
-      <li><a href="">About</a></li>
-      <li><a href="">Blog</a></li>
-      <li><a href="">Contact</a></li>
-    </ul>
-  </nav>
-  
 
-<!-- <nav class="bg-white border-gray-200 dark:bg-gray-900">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
-        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-    </a>
-    <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-        </svg>
-    </button>
-    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-        <li>
-          <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
-        </li>
-        <li>
-          <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
-        </li>
-        <li>
-          <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
-        </li>
-        <li>
-          <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
-        </li>
-        <li>
-          <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav> -->
+<div class="container">
 
-<!-- <section class="flex justify-between gap-5 m-4">
-  
+<h1>Data Science Interview Questions</h1>
+<div class="subtitle">Detailed Explanations with Examples & Plot References</div>
 
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-    <a href="#">
-        <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
-    </a>
-    <div class="p-5">
-        <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Read more
-             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-        </a>
-    </div>
+<!-- Question 1 -->
+<div class="card">
+<div class="question"><span class="number">1</span>Why are Tensors preferred over NumPy arrays in Deep Learning?</div>
+
+<div class="answer">
+Tensors are preferred in deep learning because they are highly optimized for mathematical computations and support GPU/TPU acceleration. They also support automatic differentiation, which is very important while training neural networks.
+
+Deep learning frameworks like TensorFlow and PyTorch use tensors internally because tensors can efficiently handle multi-dimensional data and large matrix operations.
 </div>
 
+<div class="example">
+<div class="example-title">Example:</div>
+A grayscale image can be represented as a 2D tensor while a colored image can be represented as a 3D tensor.
 
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-    <a href="#">
-        <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
-    </a>
-    <div class="p-5">
-        <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Read more
-             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-        </a>
-    </div>
+<div class="code">
+Shape of RGB Image = (Height, Width, Channels)
+Example = (224, 224, 3)
+</div>
+</div>
 </div>
 
+<!-- Question 2 -->
+<div class="card">
+<div class="question"><span class="number">2</span>How do you handle character encoding issues when reading CSV files?</div>
 
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-    <a href="#">
-        <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
-    </a>
-    <div class="p-5">
-        <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Read more
-             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-        </a>
-    </div>
+<div class="answer">
+Sometimes CSV files contain special characters and when Pandas tries to read them, it may throw UnicodeDecodeError.
+
+To solve this issue, we specify the correct encoding while reading the file. Common encodings are UTF-8, latin1, and cp1252.
 </div>
 
+<div class="example">
+<div class="example-title">Example:</div>
+<div class="code">
+import pandas as pd
 
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-    <a href="#">
-        <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
-    </a>
-    <div class="p-5">
-        <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Read more
-             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-        </a>
-    </div>
+# Reading CSV with encoding
+
+df = pd.read_csv('data.csv', encoding='latin1')
+</div>
+</div>
 </div>
 
-</section> -->
+<!-- Question 20 -->
+<div class="card">
+<div class="question"><span class="number">20</span>What is the primary goal of EDA?</div>
+
+<div class="answer">
+The main goal of Exploratory Data Analysis (EDA) is to understand the dataset deeply before building machine learning models.
+
+EDA helps us identify:
+- Missing values
+- Outliers
+- Correlations
+- Distribution patterns
+- Data imbalance
+- Trends and relationships
+
+EDA mainly uses statistical summaries and visualizations.
+</div>
+
+<div class="example">
+<div class="example-title">Example:</div>
+If we are analyzing house price data, EDA helps us understand which features affect house prices the most.
+</div>
+
+<img class="plot-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Correlation_examples2.svg/1280px-Correlation_examples2.svg.png" alt="EDA Plot Example">
+</div>
+
+<!-- Question 25 -->
+<div class="card">
+<div class="question"><span class="number">25</span>What information does a Histogram give you that a Boxplot doesn’t?</div>
+
+<div class="answer">
+A Histogram shows the full distribution of data including:
+- Shape of distribution
+- Frequency of values
+- Skewness
+- Multiple peaks
+
+A Boxplot mainly summarizes the data using quartiles and highlights outliers.
+</div>
+
+<div class="example">
+<div class="example-title">Example:</div>
+Histogram can show whether the data is normally distributed or bimodal, while boxplot cannot show detailed distribution shape.
+</div>
+
+<img class="plot-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Histogram_example.svg/1200px-Histogram_example.svg.png" alt="Histogram Example">
+</div>
+
+<!-- Question 27 -->
+<div class="card">
+<div class="question"><span class="number">27</span>How do you identify a Normal Distribution visually?</div>
+
+<div class="answer">
+A normal distribution can be identified visually using histograms or KDE plots.
+
+The graph usually looks like a symmetric bell-shaped curve where:
+- Mean ≈ Median ≈ Mode
+- Data is equally distributed around the center
+</div>
+
+<img class="plot-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Normal_Distribution_PDF.svg/1280px-Normal_Distribution_PDF.svg.png" alt="Normal Distribution">
+</div>
+
+<!-- Question 28 -->
+<div class="card">
+<div class="question"><span class="number">28</span>What is a Correlation Heatmap?</div>
+
+<div class="answer">
+A Correlation Heatmap visually represents the correlation values between numerical variables.
+
+Correlation values range from:
+- +1 → Strong positive correlation
+- -1 → Strong negative correlation
+- 0 → No correlation
+
+Correlation does not imply causation. Two variables may be correlated without one causing the other.
+</div>
+
+<img class="plot-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Correlation_coefficient.png/800px-Correlation_coefficient.png" alt="Correlation Heatmap">
+</div>
+
+<!-- Question 33 -->
+<div class="card">
+<div class="question"><span class="number">33</span>What is a Violin Plot?</div>
+
+<div class="answer">
+A Violin Plot combines the features of a boxplot and KDE plot.
+
+It shows:
+- Median
+- Quartiles
+- Density distribution
+- Shape of the data
+
+It is more informative than a boxplot because it displays distribution density.
+</div>
+
+<img class="plot-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Violin_plot.svg/1200px-Violin_plot.svg.png" alt="Violin Plot">
+</div>
+
+<!-- Question 43 -->
+<div class="card">
+<div class="question"><span class="number">43</span>How do you visualize time-series data trends?</div>
+
+<div class="answer">
+Time-series trends are usually visualized using line charts.
+
+In line charts:
+- X-axis represents time
+- Y-axis represents values
+
+Line charts help identify:
+- Trends
+- Seasonality
+- Sudden spikes
+- Cyclic patterns
+</div>
+
+<img class="plot-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Line_chart_icon.svg/1200px-Line_chart_icon.svg.png" alt="Line Chart">
+</div>
+
+<div class="footer">
+Detailed Data Science Interview Preparation 🚀
+</div>
+
+</div>
+
 </body>
 </html>
+```
+
+> Continue adding remaining questions in the same card structure with detailed explanation, examples, code snippets, and plots wherever required.

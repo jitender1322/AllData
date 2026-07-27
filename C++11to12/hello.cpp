@@ -1,34 +1,39 @@
 #include <iostream>
 using namespace std;
 
+class Array{
+  private:
+    int *arr;
+    int size;
 
-int main(){
+  public:
 
-  int n,element;
-
-  cout << "Enter the number of elements : ";
-  cin >> n;
-
-  int arr[n];
-
-  for(int i=0;i<n;i++){
-    cout << "Enter the " << i+1 << " Element : ";
-    cin >> arr[i];
+  Array(int s){
+    size = s;
+    arr = new int[size];
+    cout << "Memory Allocated" << endl;
   }
 
-  cout << "Enter the element to search from the Array : ";
-  cin >> element;
-
-  for(int i=0;i<n;i++){
-    if(arr[i]==element){
-      cout << "The element is found on index : " << i << endl;
-      break;
-    }else{
-      cout << "Given element is not in array";
+  void AddEle(){
+    for (int i = 0; i < size; i++){
+      cout << "Enter the value for index no. "<< i;
+      cin >> arr[i];
     }
   }
 
+  ~Array(){
+    delete[] arr;
+    arr = NULL;
+    cout << "Memory Deallocated";
+  }
+};
 
 
-  return 0;
+int main(){
+  int num;
+  cout << "Enter the size of array : ";
+  cin >> num;
+
+  Array arr(num);
+  arr.AddEle();
 }
